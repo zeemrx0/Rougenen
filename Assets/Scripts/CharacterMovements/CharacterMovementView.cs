@@ -1,3 +1,4 @@
+using LNE.Core;
 using LNE.Utilities.Constants;
 using UnityEngine;
 
@@ -5,13 +6,17 @@ namespace LNE.Movements
 {
   public class CharacterMovementView : MonoBehaviour
   {
-    [SerializeField]
-    private Animator _animator;
+    private Unit _unit;
+
+    private void Awake()
+    {
+      _unit = GetComponentInChildren<Unit>();
+    }
 
     public void Move(Rigidbody2D rigidbody, Vector2 velocity)
     {
       rigidbody.AddForce(velocity);
-      _animator.SetFloat(AnimationParameter.MoveSpeed, velocity.magnitude);
+      _unit.Animator.SetFloat(AnimationParameter.MoveSpeed, velocity.magnitude);
 
       if (velocity.x > 0)
       {

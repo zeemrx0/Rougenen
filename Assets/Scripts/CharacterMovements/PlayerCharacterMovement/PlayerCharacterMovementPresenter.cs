@@ -5,13 +5,13 @@ using Zenject;
 
 namespace LNE.Movements
 {
-  public class PlayerMovementPresenter : CharacterMovementPresenter
+  public class PlayerCharacterMovementPresenter : CharacterMovementPresenter
   {
     #region Injected
     private PlayerInputManager _playerInputManager;
     #endregion
 
-    private PlayerMovementView _view;
+    private PlayerCharacterMovementView _view;
 
     [Inject]
     public void Construct(PlayerInputManager playerInputManager)
@@ -23,7 +23,7 @@ namespace LNE.Movements
     {
       base.Awake();
 
-      _view = GetComponent<PlayerMovementView>();
+      _view = GetComponent<PlayerCharacterMovementView>();
     }
 
     protected override void FixedUpdate()
