@@ -872,7 +872,7 @@ public class SPUM_Manager : MonoBehaviour
         }
         else if(_drawItemIndex == -1 ) //몸
         {
-            string path = "Assets/SPUM/SPUM_Sprites/BodySource/Species/";
+            string path = "Assets/AssetPacks/SPUM/SPUM_Sprites/BodySource/Species/";
             DirectoryInfo dir = new DirectoryInfo(path);
             FileInfo[] info = dir.GetFiles("*.*");
             List<string> _speciesList = new List<string>();
@@ -953,7 +953,7 @@ public class SPUM_Manager : MonoBehaviour
         }
         else if(_drawItemIndex == 10) // 말의 경우
         {
-            string path = "Assets/SPUM/SPUM_Sprites/RideSource/";
+            string path = "Assets/AssetPacks/SPUM/SPUM_Sprites/RideSource/";
             DirectoryInfo dir = new DirectoryInfo(path);
             FileInfo[] info = dir.GetFiles("*.*");
             List<string> _dirList = new List<string>();
@@ -2606,9 +2606,9 @@ public class SPUM_Manager : MonoBehaviour
     public void AnimContCheck()
     {
         // RuntimeAnimatorController tC;
-        // if(File.Exists("Assets/SPUM/Res/Animation/NormalAnimator.controller"))
+        // if(File.Exists("Assets/AssetPacks/SPUM/Res/Animation/NormalAnimator.controller"))
         // {
-        //     tC = (RuntimeAnimatorController)AssetDatabase.LoadAssetAtPath("Assets/SPUM/Res/Animation/NormalAnimator.controller",typeof(RuntimeAnimatorController));
+        //     tC = (RuntimeAnimatorController)AssetDatabase.LoadAssetAtPath("Assets/AssetPacks/SPUM/Res/Animation/NormalAnimator.controller",typeof(RuntimeAnimatorController));
         //     _animControllerList[0]=tC;
         // }
         // else
@@ -2616,9 +2616,9 @@ public class SPUM_Manager : MonoBehaviour
         //     _animControllerList[0]=null;
         // }
 
-        // if(File.Exists("Assets/SPUM/SPUM_Sprites/Packages/Undead/Animation/UndeadAnimator.controller"))
+        // if(File.Exists("Assets/AssetPacks/SPUM/SPUM_Sprites/Packages/Undead/Animation/UndeadAnimator.controller"))
         // {
-        //     tC = (RuntimeAnimatorController)AssetDatabase.LoadAssetAtPath("Assets/SPUM/SPUM_Sprites/Packages/Undead/Animation/UndeadAnimator.controller",typeof(RuntimeAnimatorController));
+        //     tC = (RuntimeAnimatorController)AssetDatabase.LoadAssetAtPath("Assets/AssetPacks/SPUM/SPUM_Sprites/Packages/Undead/Animation/UndeadAnimator.controller",typeof(RuntimeAnimatorController));
         //     _animControllerList[1]=tC;
         // }
         // else
@@ -2710,7 +2710,7 @@ public class SPUM_Manager : MonoBehaviour
 
         //어셋 카피
 
-        if(AssetDatabase.CopyAsset("Assets/SPUM/SPUM_Sprites/Items","Assets/Resources/SPUM/SPUM_Sprites/Items"))
+        if(AssetDatabase.CopyAsset("Assets/AssetPacks/SPUM/SPUM_Sprites/Items","Assets/Resources/SPUM/SPUM_Sprites/Items"))
         {
             Debug.Log("Install SPUM Sprtie Data Success in Resources Folder");
 
@@ -2724,7 +2724,7 @@ public class SPUM_Manager : MonoBehaviour
             Debug.Log("Copy Failed");
         }
 
-        if(AssetDatabase.CopyAsset("Assets/SPUM/SPUM_Sprites/Packages","Assets/Resources/SPUM/SPUM_Sprites/Packages"))
+        if(AssetDatabase.CopyAsset("Assets/AssetPacks/SPUM/SPUM_Sprites/Packages","Assets/Resources/SPUM/SPUM_Sprites/Packages"))
         {
             Debug.Log("Install SPUM Sprtie Packages Data Success in Resources Folder");
         }
@@ -2813,10 +2813,10 @@ public class SPUM_Manager : MonoBehaviour
     //Resolve
     public void CheckVesionFile()
     {
-        if(File.Exists("Assets/SPUM/Script/SPUM_TexutreList.cs"))
+        if(File.Exists("Assets/AssetPacks/SPUM/Script/SPUM_TexutreList.cs"))
         {
             Debug.Log("Filex Exits, will delete it");
-            FileUtil.DeleteFileOrDirectory("Assets/SPUM/Script/SPUM_TexutreList.cs");
+            FileUtil.DeleteFileOrDirectory("Assets/AssetPacks/SPUM/Script/SPUM_TexutreList.cs");
         }
     }
 

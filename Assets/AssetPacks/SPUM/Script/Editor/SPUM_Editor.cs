@@ -65,10 +65,10 @@ public class SPUM_Editor : Editor
                     // var reactivePath = scriptPath.Substring(0,index)+"SPUM";
 
                     SPB._mainBodyList.Clear();
-                    SPB._mainBody = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Human_1.png",typeof(Texture2D));
+                    SPB._mainBody = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/AssetPacks/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Human_1.png",typeof(Texture2D));
 
                     string spritePath = AssetDatabase.GetAssetPath(  SPB._mainBody );
-                    Object[] sprites = AssetDatabase.LoadAllAssetsAtPath("Assets/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Human_1.png");
+                    Object[] sprites = AssetDatabase.LoadAllAssetsAtPath("Assets/AssetPacks/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Human_1.png");
                     var sortedList = sprites.OrderBy(go=>go.name).ToList();
                     List<Sprite> tSP = new List<Sprite>();
                     for(var i = 0 ; i < sortedList.Count;i++)
@@ -79,8 +79,8 @@ public class SPUM_Editor : Editor
                         }
                     }
 
-                    SPB._mainEye = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Eye/Eye0.png",typeof(Texture2D));
-                    sprites = AssetDatabase.LoadAllAssetsAtPath("Assets/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Eye/Eye0.png");
+                    SPB._mainEye = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/AssetPacks/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Eye/Eye0.png",typeof(Texture2D));
+                    sprites = AssetDatabase.LoadAllAssetsAtPath("Assets/AssetPacks/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Eye/Eye0.png");
                     for(var j = 0 ; j < sprites.Length ;j++)
                     {
                         if(sprites[j].GetType() == typeof(Sprite))

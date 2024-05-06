@@ -45,7 +45,7 @@ namespace Assets.PixelHeroes.Scripts.Editor
 
         private static bool Slice(Texture2D texture)
         {
-            const string examplePath = "Assets/PixelHeroes/Images/Example.png";
+            const string examplePath = "Assets/AssetPacks/PixelHeroes/Images/Example.png";
             var exampleTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(examplePath);
 
             if (texture == null)

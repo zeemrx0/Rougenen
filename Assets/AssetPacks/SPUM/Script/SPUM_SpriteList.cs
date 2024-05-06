@@ -71,7 +71,7 @@ public class SPUM_SpriteList : MonoBehaviour
             if (StringList[i].Length > 1)
             {
 
-                // Assets/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Human_1.png
+                // Assets/AssetPacks/SPUM/SPUM_Sprites/BodySource/Species/0_Human/Human_1.png
             }
         }
     }

@@ -234,9 +234,9 @@ public class SPUM_Exporter : MonoBehaviour
 				tName = _imageName+"_Full";
 			}
 
-			if(!Directory.Exists("Assets/SPUM/ScreenShots/"))
+			if(!Directory.Exists("Assets/AssetPacks/SPUM/ScreenShots/"))
 			{
-				Directory.CreateDirectory("Assets/SPUM/ScreenShots/");
+				Directory.CreateDirectory("Assets/AssetPacks/SPUM/ScreenShots/");
 			}
 
 			string filename = string.Format("{0}/SPUM/ScreenShots/{2}_{1}.png", Application.dataPath,i,tName);
@@ -272,9 +272,9 @@ public class SPUM_Exporter : MonoBehaviour
 		temp.anisoLevel = 0;
 
 		List<GifFrame> frames = new List<GifFrame>(_textSaveList.Count);
-		if(!Directory.Exists("Assets/SPUM/ScreenShots/GifExports"))
+		if(!Directory.Exists("Assets/AssetPacks/SPUM/ScreenShots/GifExports"))
 		{
-			Directory.CreateDirectory("Assets/SPUM/ScreenShots/GifExports");
+			Directory.CreateDirectory("Assets/AssetPacks/SPUM/ScreenShots/GifExports");
 		}
 		string filepath = Application.dataPath + "/SPUM/ScreenShots/GifExports/"+_unitPrefab.name+"_"+_sepaName+".gif";
 		for(var i = 0 ; i < _textSaveList.Count ; i++)

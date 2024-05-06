@@ -29,7 +29,7 @@ Net - Contributor.
 1. Import this asset from asset store.
 2. Select SPUM_Manager Ojbect in Scenec and Install Button at Inspector
    (After installed, you have to check "Assets/Resources/SPUM/SPUM_Sprites" Folder is exist)
-3. Play SPUM_Scene file at "Assets/SPUM/Scene/SPUM_Scene".
+3. Play SPUM_Scene file at "Assets/AssetPacks/SPUM/Scene/SPUM_Scene".
 4. You can choose part of characters and random choose, and testing animation provided.
 5. Save prefabs file then saved unit data located at "Assets/Resources/SPUM/SPUM_Units" with unit code name.
 6. You can using saved prefabs to your game project.
