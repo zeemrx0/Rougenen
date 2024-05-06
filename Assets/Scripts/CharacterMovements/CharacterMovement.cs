@@ -1,4 +1,5 @@
 using System;
+using LNE.Core;
 using UnityEngine;
 
 namespace LNE.Movements
@@ -8,7 +9,11 @@ namespace LNE.Movements
     protected Rigidbody2D _rigidbody;
     protected CharacterMovementData _data;
 
-    protected virtual void Awake() { }
+    protected virtual void Awake()
+    {
+      _rigidbody = GetComponent<Rigidbody2D>();
+      _data = GetComponentInChildren<Character>().MovementData;
+    }
 
     protected virtual void FixedUpdate() { }
 

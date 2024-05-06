@@ -21,8 +21,8 @@ namespace LNE.Movements
 
     protected override void Awake()
     {
-      _rigidbody = GetComponent<Rigidbody2D>();
-      _data = GetComponentInChildren<Character>().MovementData;
+      base.Awake();
+
       _view = GetComponent<PlayerMovementView>();
     }
 

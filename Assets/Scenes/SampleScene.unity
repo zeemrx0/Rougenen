@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115470, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_Color.a
-      value: 0.5019608
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115471, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458057, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_Color.a
-      value: 0.5019608
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3881087804030458062, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_SizeDelta.x
@@ -8358,6 +8358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af720c64b002e4e518a7ea3725dd82ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 1323625125}
 --- !u!1 &1323625120
 GameObject:
   m_ObjectHideFlags: 0

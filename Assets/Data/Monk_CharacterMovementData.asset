@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7a59cce9e7941b69b07048f417d1e3, type: 3}
   m_Name: Monk_CharacterMovementData
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 140
+  <MoveSpeed>k__BackingField: 160
   <MaxMoveSpeed>k__BackingField: 200
