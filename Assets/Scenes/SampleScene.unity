@@ -8052,6 +8052,7 @@ GameObject:
   - component: {fileID: 1319440431}
   - component: {fileID: 1319440430}
   - component: {fileID: 1319440432}
+  - component: {fileID: 1319440433}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8123,7 +8124,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 6
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -8149,6 +8150,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1f0d80b481d42eaabe784ee2e1a4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1319440433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319440428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af720c64b002e4e518a7ea3725dd82ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1323625120
 GameObject:
   m_ObjectHideFlags: 0
@@ -8162,6 +8175,7 @@ GameObject:
   - component: {fileID: 1323625122}
   - component: {fileID: 1323625125}
   - component: {fileID: 1323625124}
+  - component: {fileID: 1323625126}
   m_Layer: 0
   m_Name: Monk
   m_TagString: Untagged
@@ -8287,6 +8301,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1323625126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323625120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335c2a77264424dad820ffc58a383f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MovementData>k__BackingField: {fileID: 11400000, guid: b0f03fdfac8944362bc5fcc2f055a136, type: 2}
 --- !u!1 &1447085214
 GameObject:
   m_ObjectHideFlags: 0
