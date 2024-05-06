@@ -7,12 +7,12 @@ namespace LNE.Movements
   public abstract class CharacterMovementPresenter : MonoBehaviour
   {
     protected Rigidbody2D _rigidbody;
-    protected CharacterMovementData _data;
+    protected UnitStatsData _data;
 
     protected virtual void Awake()
     {
       _rigidbody = GetComponent<Rigidbody2D>();
-      _data = GetComponentInChildren<Character>().MovementData;
+      _data = GetComponentInChildren<Unit>().MovementData;
     }
 
     protected virtual void FixedUpdate() { }

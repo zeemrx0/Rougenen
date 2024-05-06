@@ -3,10 +3,10 @@ using UnityEngine;
 namespace LNE.Movements
 {
   [CreateAssetMenu(
-    fileName = "_CharacterMovementData",
-    menuName = "Movements/Character Movement"
+    fileName = "_UnitStatsData",
+    menuName = "Units/Unit Stats"
   )]
-  public class CharacterMovementData : ScriptableObject
+  public class UnitStatsData : ScriptableObject
   {
     [field: SerializeField]
     public float MoveSpeed { get; private set; } = 20f;
