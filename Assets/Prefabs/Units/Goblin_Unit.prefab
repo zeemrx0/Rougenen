@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1060718057425823215, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: <Stats>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 56f4651e6dce546f1ba6368490a6e51b, type: 2}
+    - target: {fileID: 1060718057425823215, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
       propertyPath: <UnitStatsData>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 56f4651e6dce546f1ba6368490a6e51b, type: 2}
@@ -30,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441915132779715769, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
       propertyPath: m_Name
-      value: Goblin
+      value: Goblin_Unit
       objectReference: {fileID: 0}
     - target: {fileID: 3627453066216763344, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
       propertyPath: m_Sprite

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5528593798749311979}
   - component: {fileID: 4472375531202975453}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MoveCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 437941021921617180}
   - component: {fileID: 8358731718397992591}
   - component: {fileID: 2817640107547492477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}

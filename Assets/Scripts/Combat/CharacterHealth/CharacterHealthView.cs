@@ -11,9 +11,9 @@ namespace LNE.Combat
       _characterHealthUIView = GetComponentInChildren<CharacterHealthUIView>();
     }
 
-    public void SetHealth(float health)
+    public void SetHealthSliderValue(float health)
     {
-      _characterHealthUIView.SetHealth(health);
+      _characterHealthUIView.SetHealthSliderValue(health);
     }
   }
 }

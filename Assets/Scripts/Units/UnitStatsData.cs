@@ -15,5 +15,11 @@ namespace LNE.Units
 
     [field: SerializeField]
     public float MaxMoveSpeed { get; private set; } = 160f;
+
+    [field: SerializeField]
+    public float AttackDamage { get; private set; } = 5f;
+
+    [field: SerializeField]
+    public float AttackSpeed { get; private set; } = 1f;
   }
 }

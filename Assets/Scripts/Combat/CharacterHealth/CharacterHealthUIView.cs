@@ -8,7 +8,7 @@ namespace LNE.Combat
     [SerializeField]
     protected Slider _slider;
 
-    public void SetHealth(float health)
+    public void SetHealthSliderValue(float health)
     {
       _slider.value = health;
     }

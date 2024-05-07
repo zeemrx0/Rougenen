@@ -20,8 +20,8 @@ namespace LNE.Combat
 
     protected virtual void Start()
     {
-      _model.MaxHealth = _unit.UnitStatsData.MaxHealth;
-      _model.CurrentHealth = _unit.UnitStatsData.MaxHealth;
+      _model.MaxHealth = _unit.Stats.MaxHealth;
+      _model.CurrentHealth = _unit.Stats.MaxHealth;
     }
 
     public void TakeDamage(float damage)
@@ -32,7 +32,7 @@ namespace LNE.Combat
         _model.CurrentHealth = 0;
         StartDie();
       }
-      // _view.SetHealthSliderValue(_model.CurrentHealth / _model.MaxHealth);
+      _view.SetHealthSliderValue(_model.CurrentHealth / _model.MaxHealth);
     }
 
     private void StartDie()

@@ -12,7 +12,7 @@ namespace LNE.Movements
     protected virtual void Awake()
     {
       _rigidbody = GetComponent<Rigidbody2D>();
-      _data = GetComponentInChildren<Unit>().UnitStatsData;
+      _data = GetComponentInChildren<Unit>().Stats;
     }
 
     protected virtual void FixedUpdate() { }

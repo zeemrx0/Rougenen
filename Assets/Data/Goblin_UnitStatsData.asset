@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7a59cce9e7941b69b07048f417d1e3, type: 3}
   m_Name: Goblin_UnitStatsData
   m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 100
   _moveSpeed: 120
   <MaxMoveSpeed>k__BackingField: 160
+  <AttackDamage>k__BackingField: 5
+  <AttackSpeed>k__BackingField: 1
