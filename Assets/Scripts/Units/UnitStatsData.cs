@@ -1,17 +1,16 @@
 using UnityEngine;
 
-namespace LNE.Movements
+namespace LNE.Units
 {
-  [CreateAssetMenu(
-    fileName = "_UnitStatsData",
-    menuName = "Units/Unit Stats"
-  )]
+  [CreateAssetMenu(fileName = "_UnitStatsData", menuName = "Units/Unit Stats")]
   public class UnitStatsData : ScriptableObject
   {
     [field: SerializeField]
-    public float MoveSpeed { get; private set; } = 20f;
+    private float _moveSpeed = 120f;
+
+    public float MoveSpeed => _moveSpeed * 10f;
 
     [field: SerializeField]
-    public float MaxMoveSpeed { get; private set; } = 40f;
+    public float MaxMoveSpeed { get; private set; } = 160f;
   }
 }

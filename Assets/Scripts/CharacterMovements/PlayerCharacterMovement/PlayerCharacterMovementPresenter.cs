@@ -1,4 +1,3 @@
-using LNE.Core;
 using LNE.Inputs;
 using UnityEngine;
 using Zenject;
@@ -36,7 +35,7 @@ namespace LNE.Movements
           _playerInputManager.MoveInput.y
             * _data.MoveSpeed
             * Time.fixedDeltaTime
-        ) * 10;
+        );
 
       _view.Move(_rigidbody, velocity);
 

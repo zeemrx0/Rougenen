@@ -1,7 +1,6 @@
-using LNE.Movements;
 using UnityEngine;
 
-namespace LNE.Core
+namespace LNE.Units
 {
   public class Unit : MonoBehaviour
   {

@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &999537520020296657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 172115222256965294, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      propertyPath: mBehaviorSource.behaviorName
+      value: Goblin_AI_Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590991041280821468, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590991041280821468, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604898102668622948, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      propertyPath: m_Name
+      value: Goblin_AI_Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367052161890099381, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367052161890099381, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367052161890099381, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5367052161890099381, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7331448742844156490}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4604898102668622948, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 3595163971009738687}
+  m_SourcePrefab: {fileID: 100100000, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+--- !u!1 &3618906703343579061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4604898102668622948, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+  m_PrefabInstance: {fileID: 999537520020296657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3595163971009738687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618906703343579061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 1
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 0
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 11400000, guid: f046d49c1002b44f183779fe3ebdc5a8, type: 2}
+  mBehaviorSource:
+    behaviorName: Goblin
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: 
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
+--- !u!4 &5162404546081698660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5367052161890099381, guid: 53949cdd5e8e54617b205ebe3dd7b838, type: 3}
+  m_PrefabInstance: {fileID: 999537520020296657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4478803629451968454
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5162404546081698660}
+    m_Modifications:
+    - target: {fileID: 6332417066146254599, guid: f588c01db1e2c44afb90e9134e8f5cf4, type: 3}
+      propertyPath: m_Name
+      value: Goblin_Unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600414354024379788, guid: f588c01db1e2c44afb90e9134e8f5cf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600414354024379788, guid: f588c01db1e2c44afb90e9134e8f5cf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600414354024379788, guid: f588c01db1e2c44afb90e9134e8f5cf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f588c01db1e2c44afb90e9134e8f5cf4, type: 3}
+--- !u!4 &7331448742844156490 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6600414354024379788, guid: f588c01db1e2c44afb90e9134e8f5cf4, type: 3}
+  m_PrefabInstance: {fileID: 4478803629451968454}
+  m_PrefabAsset: {fileID: 0}

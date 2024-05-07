@@ -1,5 +1,5 @@
 using System;
-using LNE.Core;
+using LNE.Units;
 using UnityEngine;
 
 namespace LNE.Movements
