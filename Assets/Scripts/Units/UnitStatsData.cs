@@ -6,6 +6,9 @@ namespace LNE.Units
   public class UnitStatsData : ScriptableObject
   {
     [field: SerializeField]
+    public float MaxHealth { get; private set; } = 100f;
+
+    [field: SerializeField]
     private float _moveSpeed = 120f;
 
     public float MoveSpeed => _moveSpeed * 10f;
