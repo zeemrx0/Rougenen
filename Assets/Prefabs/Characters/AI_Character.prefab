@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8866052605459460241
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3562648982346125348, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562648982346125348, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562648982346125348, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966742185744043253, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      propertyPath: m_Name
+      value: AI_Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862966309993658445, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862966309993658445, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4966742185744043253, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1078257971343587171}
+    - targetCorrespondingSourceObject: {fileID: 4966742185744043253, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2446530103111929350}
+    - targetCorrespondingSourceObject: {fileID: 4966742185744043253, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3842762445801930047}
+    - targetCorrespondingSourceObject: {fileID: 4966742185744043253, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -9100092117181722812}
+  m_SourcePrefab: {fileID: 100100000, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+--- !u!1 &4604898102668622948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4966742185744043253, guid: d70d9b2af349144f48edc2a63b2d1952, type: 3}
+  m_PrefabInstance: {fileID: 8866052605459460241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1078257971343587171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604898102668622948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a34d3cc75546a8b4af5e27e174d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2446530103111929350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604898102668622948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583ec90ad16b747859d22351c4ccdeb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3842762445801930047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604898102668622948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee3409fc57b24cb7ac667e475eb366c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unit: {fileID: 0}
+--- !u!114 &-9100092117181722812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604898102668622948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d003d3bb8e74f1aab488e424201703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterHealthUIView: {fileID: 0}

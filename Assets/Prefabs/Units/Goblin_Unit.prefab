@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8657431783876629438
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1060718057425823215, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: <Stats>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 56f4651e6dce546f1ba6368490a6e51b, type: 2}
+    - target: {fileID: 1060718057425823215, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: <UnitStatsData>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 56f4651e6dce546f1ba6368490a6e51b, type: 2}
+    - target: {fileID: 1987450801183347867, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_SpriteLibraryAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d8fc862cc052fd47a7ee686829e8fbb, type: 2}
+    - target: {fileID: 2574934963030304306, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574934963030304306, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574934963030304306, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441915132779715769, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_Name
+      value: Goblin_Unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3627453066216763344, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4723107735738678597, guid: da6baafb8ce1b7c4fb42e126c3bcb340, type: 3}
+    - target: {fileID: 3627453066216763344, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633317547785911698, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
+      propertyPath: m_SpriteHash
+      value: 339470298
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e393ead7a40e047b4b874706bf732d82, type: 3}
