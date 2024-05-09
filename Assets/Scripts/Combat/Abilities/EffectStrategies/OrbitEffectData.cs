@@ -15,10 +15,16 @@ namespace LNE.Combat.Abilities
     public const string DefaultFileName = "_Orbit_EffectData";
 
     [SerializeField]
-    private Projectile _projectilePrefab;
+    private Projectile _projectile;
 
     [SerializeField]
-    private SoundData _projectSound;
+    private LayerMask _ignoreLayers;
+
+    [SerializeField]
+    private SoundData _onHitSound;
+
+    [SerializeField]
+    private VFX _onHitVFX;
 
     public override void StartEffect(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
@@ -31,16 +37,19 @@ namespace LNE.Combat.Abilities
       abilityModel.InitialPosition =
         characterAbilitiesPresenter.FindAbilitySpawnPosition(abilityName);
 
-      Projectile projectile = Instantiate(_projectilePrefab);
+      Projectile projectile = Instantiate(_projectile);
 
+      projectile.Owner =
+        characterAbilitiesPresenter.gameObject.GetComponent<Character>();
       projectile.AbilityStatsData = abilityStatsData;
+      projectile.IgnoreLayers = _ignoreLayers;
+      projectile.OnHitSound = _onHitSound;
+      projectile.OnHitVFX = _onHitVFX;
+      projectile.IsOrbit = true;
+
       projectile.SetGravityScale(0);
       projectile.transform.position =
         abilityModel.InitialPosition + Vector2.left * abilityStatsData.Range;
-      projectile.Owner =
-        characterAbilitiesPresenter.gameObject.GetComponent<Character>();
-
-      projectile.IsOrbit = true;
     }
   }
 }

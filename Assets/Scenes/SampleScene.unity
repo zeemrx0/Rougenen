@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 203113068}
   - component: {fileID: 203113071}
   - component: {fileID: 203113070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1815,10 +1815,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3618906703343579061, guid: 0e1de7d1392404cf9ac6e497be47d639, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2076018046}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1de7d1392404cf9ac6e497be47d639, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -2193,7 +2190,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -10854,23 +10851,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &2076018035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3618906703343579061, guid: 0e1de7d1392404cf9ac6e497be47d639, type: 3}
-  m_PrefabInstance: {fileID: 435351114}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2076018046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076018035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf3498c94b4aa4c78ab6fd6f467c8f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3881087803554926560 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6350887459340573488, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}

@@ -52,10 +52,10 @@ namespace LNE.Combat
 
     protected virtual IEnumerator DieCoroutine(float delayTime)
     {
-      TryGetComponent(out Collider c);
-      if (c != null)
+      TryGetComponent(out Collider2D collider);
+      if (collider != null)
       {
-        c.enabled = false;
+        collider.enabled = false;
       }
 
       foreach (Transform child in transform)

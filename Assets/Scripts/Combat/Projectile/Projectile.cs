@@ -11,19 +11,12 @@ namespace LNE.Combat
   public class Projectile : MonoBehaviour
   {
     public Character Owner { get; set; }
-    public IObjectPool<Projectile> BelongingPool { get; set; }
-
     public AbilityStatsData AbilityStatsData { get; set; }
+    public IObjectPool<Projectile> BelongingPool { get; set; }
+    public LayerMask IgnoreLayers { get; set; }
+    public VFX OnHitVFX { get; set; }
+    public SoundData OnHitSound { get; set; }
     public bool IsOrbit { get; set; } = false;
-
-    [field: SerializeField]
-    private LayerMask _ignoreLayers;
-
-    [SerializeField]
-    private VFX _onHitObjectVFXPrefab;
-
-    [SerializeField]
-    private SoundData _onHitObjectSound;
 
     private Rigidbody2D _rigidbody;
     private SoundPlayer _soundPlayer;
@@ -39,7 +32,7 @@ namespace LNE.Combat
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      if ((_ignoreLayers & (1 << other.gameObject.layer)) > 0)
+      if ((IgnoreLayers & (1 << other.gameObject.layer)) > 0)
       {
         return;
       }
@@ -53,8 +46,8 @@ namespace LNE.Combat
       switch (other.tag)
       {
         default:
-          // SpawnVFX(_onHitObjectVFXPrefab);
-          // _soundPlayer.Play(_onHitObjectSound);
+          // SpawnVFX(OnHitVFX);
+          _soundPlayer.Play(OnHitSound);
 
           other.TryGetComponent<CharacterHealthPresenter>(
             out CharacterHealthPresenter health
@@ -67,12 +60,8 @@ namespace LNE.Combat
 
             Deactivate(
               Mathf.Max(
-                _onHitObjectVFXPrefab != null
-                  ? _onHitObjectVFXPrefab.Duration
-                  : 0,
-                _onHitObjectSound != null
-                  ? _onHitObjectSound.AudioClip.length
-                  : 0
+                OnHitVFX != null ? OnHitVFX.Duration : 0,
+                OnHitSound != null ? OnHitSound.AudioClip.length : 0
               )
             );
           }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace LNE.Core
 {
-  [CreateAssetMenu(fileName = "_SoundData", menuName = "Core/Sound", order = 0)]
+  [CreateAssetMenu(fileName = "_SoundData", menuName = "Sound", order = 0)]
   public class SoundData : ScriptableObject
   {
     [field: SerializeField]

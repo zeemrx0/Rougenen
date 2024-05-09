@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11899caebb0864c41b05912e5d822692, type: 3}
   m_Name: WaterBall_Orbit_EffectData
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 3398521134171998523, guid: 65b8ef8dabe8449aba73d87666a8494b, type: 3}
-  _projectSound: {fileID: 0}
+  _projectile: {fileID: 3398521134171998523, guid: 65b8ef8dabe8449aba73d87666a8494b, type: 3}
+  _ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 384
+  _onHitSound: {fileID: 11400000, guid: f10a86cce3a1d4a89a2ca9d1f64623d3, type: 2}
+  _onHitVFX: {fileID: 0}
