@@ -12,9 +12,9 @@ namespace LNE.Combat
   {
     public Character Owner { get; set; }
     public IObjectPool<Projectile> BelongingPool { get; set; }
-    public float AliveRange { get; set; } = 1000000000f;
 
     public AbilityStatsData AbilityStatsData { get; set; }
+    public bool IsOrbit { get; set; } = false;
 
     [field: SerializeField]
     private LayerMask _ignoreLayers;
@@ -29,7 +29,6 @@ namespace LNE.Combat
     private SoundPlayer _soundPlayer;
     private bool _isDestroyedOnCollision = false;
     private Vector2 _lastOwnerPosition;
-    private bool _rotateAroundOwner = false;
     private float _lastAngle = 0f;
 
     private void Awake()
@@ -45,8 +44,8 @@ namespace LNE.Combat
         return;
       }
 
-      other.gameObject.TryGetComponent<Character>(out Character owner);
-      if (_isDestroyedOnCollision || owner == Owner)
+      other.TryGetComponent<Character>(out Character otherCharacter);
+      if (_isDestroyedOnCollision || otherCharacter == Owner)
       {
         return;
       }
@@ -54,24 +53,30 @@ namespace LNE.Combat
       switch (other.tag)
       {
         default:
-          if (_onHitObjectVFXPrefab != null)
+          // SpawnVFX(_onHitObjectVFXPrefab);
+          // _soundPlayer.Play(_onHitObjectSound);
+
+          other.TryGetComponent<CharacterHealthPresenter>(
+            out CharacterHealthPresenter health
+          );
+          health?.TakeDamage(AbilityStatsData.Damage);
+
+          if (AbilityStatsData.IsDestroyProjectileOnCollision)
           {
-            SpawnVFX(_onHitObjectVFXPrefab);
-            _soundPlayer.Play(_onHitObjectSound);
-
-            other.TryGetComponent<CharacterHealthPresenter>(
-              out CharacterHealthPresenter health
-            );
-            health?.TakeDamage(AbilityStatsData.Damage);
-
             _isDestroyedOnCollision = true;
+
             Deactivate(
               Mathf.Max(
-                _onHitObjectVFXPrefab.Duration,
-                _onHitObjectSound.AudioClip.length
+                _onHitObjectVFXPrefab != null
+                  ? _onHitObjectVFXPrefab.Duration
+                  : 0,
+                _onHitObjectSound != null
+                  ? _onHitObjectSound.AudioClip.length
+                  : 0
               )
             );
           }
+
           break;
       }
     }
@@ -83,20 +88,20 @@ namespace LNE.Combat
         _lastOwnerPosition = Owner.transform.position;
       }
 
-      if (Vector2.Distance(transform.position, _lastOwnerPosition) > AliveRange)
+      if (
+        Vector2.Distance(transform.position, _lastOwnerPosition) > 1000000000f
+      )
       {
         Deactivate(0);
       }
 
-      if (_rotateAroundOwner)
+      if (IsOrbit)
       {
         Vector2 targetPosition =
           (
             Quaternion.Euler(0, 0, -_lastAngle)
             * (Vector2.up * AbilityStatsData.Range)
           ) + Owner.transform.position;
-
-        Debug.Log(targetPosition);
 
         transform.position = targetPosition;
 
@@ -144,12 +149,14 @@ namespace LNE.Combat
 
       child?.SetActive(true);
 
-      BelongingPool.Release(this);
-    }
-
-    public void RotateAroundOwner(float speed)
-    {
-      _rotateAroundOwner = true;
+      if (BelongingPool != null)
+      {
+        BelongingPool.Release(this);
+      }
+      else
+      {
+        Destroy(gameObject);
+      }
     }
 
     public void SetVelocity(Vector2 velocity)

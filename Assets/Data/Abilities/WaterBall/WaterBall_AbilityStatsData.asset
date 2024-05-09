@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 10
   <CooldownTime>k__BackingField: 0
-  <Range>k__BackingField: 3
-  <ProjectileSpeed>k__BackingField: 10
+  <Range>k__BackingField: 2.5
+  <ProjectileSpeed>k__BackingField: 15
+  <ProjectileAliveRange>k__BackingField: 1e+9
+  <IsDestroyProjectileOnCollision>k__BackingField: 0

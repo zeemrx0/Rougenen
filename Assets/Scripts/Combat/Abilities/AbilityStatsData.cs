@@ -20,5 +20,11 @@ namespace LNE.Combat.Abilities
 
     [field: SerializeField]
     public float ProjectileSpeed { get; set; } = 0f;
+
+    [field: SerializeField]
+    public float ProjectileAliveRange { get; set; } = 1000000000f;
+
+    [field: SerializeField]
+    public bool IsDestroyProjectileOnCollision { get; set; } = false;
   }
 }

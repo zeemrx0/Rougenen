@@ -40,16 +40,7 @@ namespace LNE.Combat.Abilities
       projectile.Owner =
         characterAbilitiesPresenter.gameObject.GetComponent<Character>();
 
-      projectile.RotateAroundOwner(abilityStatsData.ProjectileSpeed);
-
-      // Vector2 velocity =
-      //   projectile.transform.right * abilityStatsData.ProjectileSpeed;
-
-      // projectile.SetVelocity(
-      //   velocity + characterAbilitiesPresenter.GetCurrentVelocity()
-      // );
-
-      // projectile.transform.rotation = Quaternion.LookRotation(velocity);
+      projectile.IsOrbit = true;
     }
   }
 }
