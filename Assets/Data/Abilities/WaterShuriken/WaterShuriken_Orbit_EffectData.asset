@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11899caebb0864c41b05912e5d822692, type: 3}
+  m_Name: WaterShuriken_Orbit_EffectData
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 3398521134171998523, guid: a7f55c8815dec4084a2b3f9dd1516da6, type: 3}
+  _ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 384
+  _onHitSound: {fileID: 11400000, guid: 978c9652e20ed4f9695043bbecd0fcf9, type: 2}
+  _onHitVFX: {fileID: 5248073283180521228, guid: cf863cc650c714b54a7cd3314f652040, type: 3}

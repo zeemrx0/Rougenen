@@ -46,7 +46,7 @@ namespace LNE.Combat
       switch (other.tag)
       {
         default:
-          // SpawnVFX(OnHitVFX);
+          SpawnVFX(OnHitVFX);
           _soundPlayer.Play(OnHitSound);
 
           other.TryGetComponent<CharacterHealthPresenter>(
@@ -108,13 +108,7 @@ namespace LNE.Combat
     {
       if (vfx != null)
       {
-        VFX particleEffect = Instantiate(
-          vfx,
-          transform.position,
-          Quaternion.identity
-        );
-
-        Destroy(particleEffect, vfx.Duration);
+        Instantiate(vfx, transform.position, Quaternion.identity);
       }
     }
 
