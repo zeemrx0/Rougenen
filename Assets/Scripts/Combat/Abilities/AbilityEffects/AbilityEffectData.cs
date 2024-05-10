@@ -3,7 +3,7 @@ using UnityEngine.Pool;
 
 namespace LNE.Combat.Abilities
 {
-  public abstract class EffectStrategyData : ScriptableObject
+  public abstract class AbilityEffectStrategyData : ScriptableObject
   {
     public virtual IObjectPool<Projectile> InitProjectilePool()
     {

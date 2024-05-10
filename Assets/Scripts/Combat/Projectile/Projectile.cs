@@ -3,6 +3,7 @@ using System.Collections;
 using LNE.Characters;
 using LNE.Combat.Abilities;
 using LNE.Core;
+using LNE.Utilities.Constants;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -45,6 +46,9 @@ namespace LNE.Combat
 
       switch (other.tag)
       {
+        case TagName.Projectile:
+          break;
+
         default:
           SpawnVFX(OnHitVFX);
           _soundPlayer.Play(OnHitSound);
@@ -102,6 +106,12 @@ namespace LNE.Combat
 
         transform.up = (_lastOwnerPosition - (Vector2)transform.position) * -1;
       }
+    }
+
+    public void StartOrbit(float angle)
+    {
+      _lastAngle = angle;
+      IsOrbit = true;
     }
 
     private void SpawnVFX(VFX vfx)

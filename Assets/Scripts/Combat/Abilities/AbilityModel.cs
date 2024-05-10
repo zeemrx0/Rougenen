@@ -6,13 +6,19 @@ namespace LNE.Combat.Abilities
   public class AbilityModel
   {
     public IObjectPool<Projectile> ProjectilePool { get; set; }
-    public bool IsPerforming { get; set; } = false;
-    public bool IsPerformed { get; set; } = false;
-    public bool IsCancelled { get; set; } = false;
-    public float RemainingCoolDownTime { get; set; } = 0f;
+    public bool IsPerforming { get; set; }
+    public bool IsPerformed { get; set; }
+    public bool IsCancelled { get; set; }
+    public float RemainingCoolDownTime { get; set; }
     public Vector2 InitialPosition { get; set; }
     public Vector2 TargetPosition { get; set; }
     public Vector2 TargetingDirection { get; set; }
+    public int ProjectileQuantity { get; set; }
+
+    public AbilityModel()
+    {
+      Reset();
+    }
 
     public void Reset()
     {
@@ -23,6 +29,7 @@ namespace LNE.Combat.Abilities
       InitialPosition = Vector2.zero;
       TargetPosition = Vector2.zero;
       TargetingDirection = Vector2.zero;
+      ProjectileQuantity = 0;
     }
   }
 }

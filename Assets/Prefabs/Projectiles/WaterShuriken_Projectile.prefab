@@ -118,10 +118,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterShuriken_Projectile
       objectReference: {fileID: 0}
-    - target: {fileID: 6908677290725001150, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8489729580760310469, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

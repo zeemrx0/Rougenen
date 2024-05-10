@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11899caebb0864c41b05912e5d822692, type: 3}
-  m_Name: WaterShuriken_Orbit_EffectData
+  m_Name: WaterShuriken_OrbitProjectiles_EffectData
   m_EditorClassIdentifier: 
   _projectile: {fileID: 3398521134171998523, guid: a7f55c8815dec4084a2b3f9dd1516da6, type: 3}
   _ignoreLayers:

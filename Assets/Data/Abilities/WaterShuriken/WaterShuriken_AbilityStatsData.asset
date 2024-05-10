@@ -15,6 +15,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 10
   <CooldownTime>k__BackingField: 0
   <Range>k__BackingField: 2.5
-  <ProjectileSpeed>k__BackingField: 15
+  <ProjectileSpeed>k__BackingField: 10
   <ProjectileAliveRange>k__BackingField: 1e+9
+  <ProjectileQuantity>k__BackingField: 3
   <IsDestroyProjectileOnCollision>k__BackingField: 0

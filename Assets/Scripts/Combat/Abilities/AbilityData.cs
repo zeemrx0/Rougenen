@@ -20,7 +20,7 @@ namespace LNE.Combat.Abilities
     private TargetingStrategyData _targetingStrategy;
 
     [SerializeField]
-    private EffectStrategyData _effectStrategy;
+    private AbilityEffectStrategyData _effectStrategy;
 
     [SerializeField]
     private AbilityStatsData _abilityStatsData;

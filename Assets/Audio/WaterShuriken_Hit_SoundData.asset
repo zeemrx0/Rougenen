@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WaterShuriken_Hit_SoundData
   m_EditorClassIdentifier: 
   <AudioClip>k__BackingField: {fileID: 8300000, guid: 39478011e1b864c5096c148f092e06be, type: 3}
-  <Volume>k__BackingField: 1
+  <Volume>k__BackingField: 0.8

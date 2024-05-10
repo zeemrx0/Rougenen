@@ -7,12 +7,12 @@ namespace LNE.Combat.Abilities
 {
   [CreateAssetMenu(
     fileName = DefaultFileName,
-    menuName = "Abilities/Effects/Orbit",
+    menuName = "Abilities/Effects/Orbit Projectiles",
     order = 0
   )]
-  public class OrbitEffectData : EffectStrategyData
+  public class OrbitProjectilesEffectData : AbilityEffectStrategyData
   {
-    public const string DefaultFileName = "_Orbit_EffectData";
+    public const string DefaultFileName = "_OrbitProjectiles_EffectData";
 
     [SerializeField]
     private Projectile _projectile;
@@ -33,23 +33,32 @@ namespace LNE.Combat.Abilities
       IObjectPool<Projectile> projectilePool
     )
     {
-      string abilityName = GetAbilityName(DefaultFileName);
-      abilityModel.InitialPosition =
-        characterAbilitiesPresenter.FindAbilitySpawnPosition(abilityName);
+      for (int i = 0; i < abilityStatsData.ProjectileQuantity; i++)
+      {
+        float angle = i * 360f / abilityStatsData.ProjectileQuantity;
+        SpawnProjectile(
+          characterAbilitiesPresenter.gameObject.GetComponent<Character>(),
+          abilityStatsData,
+          angle
+        );
+      }
+    }
 
+    private void SpawnProjectile(
+      Character owner,
+      AbilityStatsData abilityStatsData,
+      float angle
+    )
+    {
       Projectile projectile = Instantiate(_projectile);
 
-      projectile.Owner =
-        characterAbilitiesPresenter.gameObject.GetComponent<Character>();
+      projectile.Owner = owner;
       projectile.AbilityStatsData = abilityStatsData;
       projectile.IgnoreLayers = _ignoreLayers;
       projectile.OnHitSound = _onHitSound;
       projectile.OnHitVFX = _onHitVFX;
-      projectile.IsOrbit = true;
-
+      projectile.StartOrbit(angle);
       projectile.SetGravityScale(0);
-      projectile.transform.position =
-        abilityModel.InitialPosition + Vector2.left * abilityStatsData.Range;
     }
   }
 }

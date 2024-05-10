@@ -25,6 +25,9 @@ namespace LNE.Combat.Abilities
     public float ProjectileAliveRange { get; set; } = 1000000000f;
 
     [field: SerializeField]
+    public int ProjectileQuantity { get; set; } = 0;
+
+    [field: SerializeField]
     public bool IsDestroyProjectileOnCollision { get; set; } = false;
   }
 }
