@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 558517374009239834}
   - component: {fileID: 1875678692077684722}
   m_Layer: 0
-  m_Name: WaterShuriken
+  m_Name: WaterBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -340812249, guid: 5e8c92f59a9064c9889d034b7b948b06, type: 3}
+  m_Sprite: {fileID: 1054147001, guid: 5e8c92f59a9064c9889d034b7b948b06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2251292871148778390}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20cff57b0fb3443bd8f80b46ea69fb36, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9b0d327c2c0b244b7abfe6f4b8ba5e18, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -116,15 +116,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681329385625628016, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
       propertyPath: m_Name
-      value: WaterShuriken_Projectile
+      value: WaterBullet_Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 3868216577937336888, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
       propertyPath: m_Size.x
-      value: 0.98
+      value: 0.81154037
       objectReference: {fileID: 0}
     - target: {fileID: 3868216577937336888, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
       propertyPath: m_Size.y
-      value: 0.98
+      value: 0.81154037
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868216577937336888, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09422982
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868216577937336888, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
+      propertyPath: m_Direction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489729580760310469, guid: 1cb5a746bb7374b538676abefceb6912, type: 3}
       propertyPath: m_LocalPosition.x

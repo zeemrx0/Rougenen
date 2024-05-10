@@ -41,6 +41,14 @@ namespace LNE.Combat.Abilities
     protected virtual void Update()
     {
       _model.CoolDownAbilities();
+
+      foreach (var abilityData in _abilityDataList)
+      {
+        if (abilityData.IsPassive && !abilityData.UseOnStart)
+        {
+          abilityData.Perform(this, _model.GetAbilityModel(abilityData));
+        }
+      }
     }
 
     public Vector2 FindAbilitySpawnPosition(string abilityName)

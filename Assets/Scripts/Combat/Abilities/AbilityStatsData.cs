@@ -10,24 +10,51 @@ namespace LNE.Combat.Abilities
   public class AbilityStatsData : ScriptableObject
   {
     [field: SerializeField]
-    public float Damage { get; set; } = 0f;
+    public bool IsPassive { get; private set; }
 
     [field: SerializeField]
-    public float CooldownTime { get; set; } = 0f;
+    public bool UseOnStart { get; private set; }
 
     [field: SerializeField]
-    public float Range { get; set; } = 0f;
+    public LayerMask IgnoreLayers { get; set; }
 
     [field: SerializeField]
-    public float ProjectileSpeed { get; set; } = 0f;
+    public float Damage { get; set; }
 
     [field: SerializeField]
-    public float ProjectileAliveRange { get; set; } = 1000000000f;
+    public float CooldownTime { get; set; }
 
     [field: SerializeField]
-    public int ProjectileQuantity { get; set; } = 0;
+    public float Range { get; set; }
 
     [field: SerializeField]
-    public bool IsDestroyProjectileOnCollision { get; set; } = false;
+    public float ProjectileSpeed { get; set; }
+
+    [field: SerializeField]
+    public float ProjectileAliveRange { get; set; }
+
+    [field: SerializeField]
+    public int ProjectileQuantity { get; set; }
+
+    [field: SerializeField]
+    public float ProjectileSpawnDelay { get; set; }
+
+    [field: SerializeField]
+    public bool IsDestroyProjectileOnCollision { get; set; }
+
+    public AbilityStatsData()
+    {
+      IsPassive = true;
+      UseOnStart = false;
+      IgnoreLayers = 0;
+      Damage = 0f;
+      CooldownTime = 0f;
+      Range = 0f;
+      ProjectileSpeed = 0f;
+      ProjectileAliveRange = 1000000000f;
+      ProjectileQuantity = 0;
+      ProjectileSpawnDelay = 0.5f;
+      IsDestroyProjectileOnCollision = false;
+    }
   }
 }

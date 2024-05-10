@@ -17,7 +17,7 @@ namespace LNE.Combat.Abilities
     public Sprite Icon { get; private set; }
 
     [SerializeField]
-    private TargetingStrategyData _targetingStrategy;
+    private AbilityTargetingStrategyData _targetingStrategy;
 
     [SerializeField]
     private AbilityEffectStrategyData _effectStrategy;
@@ -25,8 +25,9 @@ namespace LNE.Combat.Abilities
     [SerializeField]
     private AbilityStatsData _abilityStatsData;
 
-    [field: SerializeField]
-    public bool IsPassive { get; private set; }
+    public bool IsPassive => _abilityStatsData.IsPassive;
+
+    public bool UseOnStart => _abilityStatsData.UseOnStart;
 
     public IObjectPool<Projectile> InitProjectilePool()
     {
@@ -48,7 +49,7 @@ namespace LNE.Combat.Abilities
       abilityModel.InitialPosition =
         characterAbilitiesPresenter.FindAbilitySpawnPosition(abilityName);
 
-      if (IsPassive)
+      if (_targetingStrategy == null && _effectStrategy != null)
       {
         _effectStrategy.StartEffect(
           characterAbilitiesPresenter,
@@ -100,9 +101,5 @@ namespace LNE.Combat.Abilities
     {
       return name.Split(DefaultFileName)[0];
     }
-
-    public float Range => _abilityStatsData.Range;
-
-    public float ProjectileSpeed => _abilityStatsData.ProjectileSpeed;
   }
 }

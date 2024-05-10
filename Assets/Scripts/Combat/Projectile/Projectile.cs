@@ -14,7 +14,6 @@ namespace LNE.Combat
     public Character Owner { get; set; }
     public AbilityStatsData AbilityStatsData { get; set; }
     public IObjectPool<Projectile> BelongingPool { get; set; }
-    public LayerMask IgnoreLayers { get; set; }
     public VFX OnHitVFX { get; set; }
     public SoundData OnHitSound { get; set; }
     public bool IsOrbit { get; set; } = false;
@@ -33,12 +32,17 @@ namespace LNE.Combat
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      if ((IgnoreLayers & (1 << other.gameObject.layer)) > 0)
+      if ((AbilityStatsData.IgnoreLayers & (1 << other.gameObject.layer)) > 0)
       {
         return;
       }
 
       other.TryGetComponent<Character>(out Character otherCharacter);
+      if (otherCharacter == null)
+      {
+        return;
+      }
+
       if (_isDestroyedOnCollision || otherCharacter == Owner)
       {
         return;
@@ -81,8 +85,11 @@ namespace LNE.Combat
         _lastOwnerPosition = Owner.transform.position;
       }
 
+      transform.right = _rigidbody.velocity.normalized;
+
       if (
-        Vector2.Distance(transform.position, _lastOwnerPosition) > 1000000000f
+        Vector2.Distance(transform.position, _lastOwnerPosition)
+        > AbilityStatsData.ProjectileAliveRange
       )
       {
         Deactivate(0);

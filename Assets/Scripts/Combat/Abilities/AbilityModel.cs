@@ -11,7 +11,7 @@ namespace LNE.Combat.Abilities
     public bool IsCancelled { get; set; }
     public float RemainingCoolDownTime { get; set; }
     public Vector2 InitialPosition { get; set; }
-    public Vector2 TargetPosition { get; set; }
+    public Vector2 TargetingPosition { get; set; }
     public Vector2 TargetingDirection { get; set; }
     public int ProjectileQuantity { get; set; }
 
@@ -27,7 +27,7 @@ namespace LNE.Combat.Abilities
       IsCancelled = false;
       RemainingCoolDownTime = 0f;
       InitialPosition = Vector2.zero;
-      TargetPosition = Vector2.zero;
+      TargetingPosition = Vector2.zero;
       TargetingDirection = Vector2.zero;
       ProjectileQuantity = 0;
     }

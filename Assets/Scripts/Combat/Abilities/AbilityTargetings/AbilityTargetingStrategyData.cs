@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LNE.Combat.Abilities
 {
-  public abstract class TargetingStrategyData : ScriptableObject
+  public abstract class AbilityTargetingStrategyData : ScriptableObject
   {
     public virtual void Init(AbilityModel abilityModel) { }
 
