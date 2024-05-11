@@ -27,6 +27,7 @@ namespace LNE.Combat.Abilities
     [field: SerializeField]
     public float Range { get; set; }
 
+    [field: Header("Projectile")]
     [field: SerializeField]
     public float ProjectileSpeed { get; set; }
 
@@ -40,7 +41,7 @@ namespace LNE.Combat.Abilities
     public float ProjectileSpawnDelay { get; set; }
 
     [field: SerializeField]
-    public bool IsDestroyProjectileOnCollision { get; set; }
+    public bool DestroyProjectileOnCollision { get; set; }
 
     public AbilityStatsData()
     {
@@ -54,7 +55,7 @@ namespace LNE.Combat.Abilities
       ProjectileAliveRange = 1000000000f;
       ProjectileQuantity = 0;
       ProjectileSpawnDelay = 0.5f;
-      IsDestroyProjectileOnCollision = false;
+      DestroyProjectileOnCollision = false;
     }
   }
 }

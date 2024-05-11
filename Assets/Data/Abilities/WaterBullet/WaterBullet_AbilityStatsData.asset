@@ -24,4 +24,4 @@ MonoBehaviour:
   <ProjectileAliveRange>k__BackingField: 1e+9
   <ProjectileQuantity>k__BackingField: 1
   <ProjectileSpawnDelay>k__BackingField: 0.5
-  <IsDestroyProjectileOnCollision>k__BackingField: 1
+  <DestroyProjectileOnCollision>k__BackingField: 1

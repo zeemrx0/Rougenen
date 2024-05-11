@@ -62,7 +62,7 @@ namespace LNE.Combat
           );
           health?.TakeDamage(AbilityStatsData.Damage);
 
-          if (AbilityStatsData.IsDestroyProjectileOnCollision)
+          if (AbilityStatsData.DestroyProjectileOnCollision)
           {
             _isDestroyedOnCollision = true;
 
