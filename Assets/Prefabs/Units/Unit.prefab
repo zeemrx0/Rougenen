@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335c2a77264424dad820ffc58a383f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <UnitStatsData>k__BackingField: {fileID: 0}
+  <Stats>k__BackingField: {fileID: 0}

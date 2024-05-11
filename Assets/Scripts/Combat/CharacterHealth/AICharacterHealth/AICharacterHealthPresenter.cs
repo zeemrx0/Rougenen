@@ -1,4 +1,11 @@
 namespace LNE.Combat
 {
-  public class AICharacterHealthPresenter : CharacterHealthPresenter { }
+  public class AICharacterHealthPresenter : CharacterHealthPresenter
+  {
+    protected override void Awake()
+    {
+      base.Awake();
+      _view = GetComponentInChildren<AICharacterHealthView>();
+    }
+  }
 }
