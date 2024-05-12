@@ -12,7 +12,7 @@ namespace LNE.Combat
   public class Projectile : MonoBehaviour
   {
     public Character Owner { get; set; }
-    public AbilityStatsData AbilityStatsData { get; set; }
+    public AbilityStatsModel AbilityStatsModel { get; set; }
     public IObjectPool<Projectile> BelongingPool { get; set; }
     public VFX OnHitVFX { get; set; }
     public SoundData OnHitSound { get; set; }
@@ -32,7 +32,7 @@ namespace LNE.Combat
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      if ((AbilityStatsData.IgnoreLayers & (1 << other.gameObject.layer)) > 0)
+      if ((AbilityStatsModel.IgnoreLayers & (1 << other.gameObject.layer)) > 0)
       {
         return;
       }
@@ -60,9 +60,9 @@ namespace LNE.Combat
           other.TryGetComponent<CharacterHealthPresenter>(
             out CharacterHealthPresenter health
           );
-          health?.TakeDamage(AbilityStatsData.Damage);
+          health?.TakeDamage(AbilityStatsModel.Damage);
 
-          if (AbilityStatsData.DestroyProjectileOnCollision)
+          if (AbilityStatsModel.DestroyProjectileOnCollision)
           {
             _isDestroyedOnCollision = true;
 
@@ -89,7 +89,7 @@ namespace LNE.Combat
 
       if (
         Vector2.Distance(transform.position, _lastOwnerPosition)
-        > AbilityStatsData.ProjectileAliveRange
+        > AbilityStatsModel.ProjectileAliveRange
       )
       {
         Deactivate(0);
@@ -100,14 +100,14 @@ namespace LNE.Combat
         Vector2 targetPosition =
           (
             Quaternion.Euler(0, 0, -_lastAngle)
-            * (Vector2.up * AbilityStatsData.Range)
+            * (Vector2.up * AbilityStatsModel.Range)
           ) + Owner.transform.position;
 
         transform.position = targetPosition;
 
         _lastAngle +=
-          AbilityStatsData.ProjectileSpeed
-          / (2 * (float)Math.PI * AbilityStatsData.Range)
+          AbilityStatsModel.ProjectileSpeed
+          / (2 * (float)Math.PI * AbilityStatsModel.Range)
           * 360
           * Time.deltaTime;
 

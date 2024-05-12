@@ -15,4 +15,4 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 1054147001, guid: 5e8c92f59a9064c9889d034b7b948b06, type: 3}
   _targetingStrategy: {fileID: 11400000, guid: 609ced3953f5242c9bf253543145c2b1, type: 2}
   _effectStrategy: {fileID: 11400000, guid: ab118a34f8f584b599b554a15ed9b115, type: 2}
-  _abilityStatsData: {fileID: 11400000, guid: 461c715444f73478e8343aaf95d671f8, type: 2}
+  Stats: {fileID: 11400000, guid: 461c715444f73478e8343aaf95d671f8, type: 2}

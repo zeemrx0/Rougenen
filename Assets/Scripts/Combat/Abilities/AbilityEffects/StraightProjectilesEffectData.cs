@@ -39,48 +39,44 @@ namespace LNE.Combat.Abilities
 
     public override void StartEffect(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel,
       IObjectPool<Projectile> projectilePool
     )
     {
       characterAbilitiesPresenter.StartCoroutine(
-        SpawnProjectilesCoroutine(
-          characterAbilitiesPresenter,
-          abilityStatsData,
-          abilityModel
-        )
+        SpawnProjectilesCoroutine(characterAbilitiesPresenter, abilityModel)
       );
     }
 
     private IEnumerator SpawnProjectilesCoroutine(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel
     )
     {
-      for (int i = 0; i < abilityStatsData.ProjectileQuantity; i++)
+      for (int i = 0; i < abilityModel.Stats.ProjectileQuantity; i++)
       {
         SpawnProjectile(
           characterAbilitiesPresenter,
-          abilityStatsData,
-          abilityModel.TargetingDirection * abilityStatsData.ProjectileSpeed
+          abilityModel.Stats,
+          abilityModel.TargetingDirection * abilityModel.Stats.ProjectileSpeed
         );
 
-        yield return new WaitForSeconds(abilityStatsData.ProjectileSpawnDelay);
+        yield return new WaitForSeconds(
+          abilityModel.Stats.ProjectileSpawnDelay
+        );
       }
     }
 
     private void SpawnProjectile(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
+      AbilityStatsModel abilityStatsModel,
       Vector2 velocity
     )
     {
       Projectile projectile = Instantiate(_projectile);
 
       projectile.Owner = characterAbilitiesPresenter.GetComponent<Character>();
-      projectile.AbilityStatsData = abilityStatsData;
+      projectile.AbilityStatsModel = abilityStatsModel;
       projectile.OnHitSound = _onHitSound;
       projectile.OnHitVFX = _onHitVFX;
       projectile.transform.position = characterAbilitiesPresenter

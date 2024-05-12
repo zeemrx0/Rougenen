@@ -23,11 +23,11 @@ namespace LNE.Combat.Abilities
     private AbilityEffectStrategyData _effectStrategy;
 
     [SerializeField]
-    private AbilityStatsData _abilityStatsData;
+    public AbilityStatsData Stats;
 
-    public bool IsPassive => _abilityStatsData.IsPassive;
+    public bool IsPassive => Stats.IsPassive;
 
-    public bool UseOnStart => _abilityStatsData.UseOnStart;
+    public bool UseOnStart => Stats.UseOnStart;
 
     public IObjectPool<Projectile> InitProjectilePool()
     {
@@ -44,6 +44,8 @@ namespace LNE.Combat.Abilities
         return false;
       }
 
+      abilityModel.Stats.BaseStats = Stats;
+
       string abilityName = GetAbilityName();
 
       abilityModel.InitialPosition =
@@ -53,7 +55,6 @@ namespace LNE.Combat.Abilities
       {
         _effectStrategy.StartEffect(
           characterAbilitiesPresenter,
-          _abilityStatsData,
           abilityModel,
           abilityModel.ProjectilePool
         );
@@ -63,7 +64,6 @@ namespace LNE.Combat.Abilities
 
       _targetingStrategy.StartTargeting(
         characterAbilitiesPresenter,
-        _abilityStatsData,
         abilityModel,
         () =>
         {
@@ -86,12 +86,11 @@ namespace LNE.Combat.Abilities
     {
       characterAbilitiesPresenter.StartCooldown(
         this,
-        _abilityStatsData.CooldownTime
+        abilityModel.Stats.CooldownTime
       );
 
       _effectStrategy.StartEffect(
         characterAbilitiesPresenter,
-        _abilityStatsData,
         abilityModel,
         projectilePool
       );

@@ -42,7 +42,7 @@ namespace LNE.Combat.Abilities
     {
       _model.CoolDownAbilities();
 
-      foreach (var abilityData in _abilityDataList)
+      foreach (AbilityData abilityData in _abilityDataList)
       {
         if (abilityData.IsPassive && !abilityData.UseOnStart)
         {

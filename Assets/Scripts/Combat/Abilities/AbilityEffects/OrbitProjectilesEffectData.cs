@@ -25,21 +25,29 @@ namespace LNE.Combat.Abilities
 
     public override void StartEffect(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel,
       IObjectPool<Projectile> projectilePool
     )
     {
-      for (int i = 0; i < abilityStatsData.ProjectileQuantity; i++)
+      for (
+        int i = 0;
+        i < abilityModel.Stats.ProjectileQuantity;
+        i++
+      )
       {
-        float angle = i * 360f / abilityStatsData.ProjectileQuantity;
-        SpawnProjectile(characterAbilitiesPresenter, abilityStatsData, angle);
+        float angle =
+          i * 360f / abilityModel.Stats.ProjectileQuantity;
+        SpawnProjectile(
+          characterAbilitiesPresenter,
+          abilityModel.Stats,
+          angle
+        );
       }
     }
 
     private void SpawnProjectile(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
+      AbilityStatsModel abilityStatsModel,
       float angle
     )
     {
@@ -47,7 +55,7 @@ namespace LNE.Combat.Abilities
 
       projectile.Owner =
         characterAbilitiesPresenter.gameObject.GetComponent<Character>();
-      projectile.AbilityStatsData = abilityStatsData;
+      projectile.AbilityStatsModel = abilityStatsModel;
       projectile.OnHitSound = _onHitSound;
       projectile.OnHitVFX = _onHitVFX;
       projectile.StartOrbit(angle);

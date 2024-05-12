@@ -12,7 +12,6 @@ namespace LNE.Combat.Abilities
 
     public abstract void StartEffect(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel,
       IObjectPool<Projectile> projectilePool
     );

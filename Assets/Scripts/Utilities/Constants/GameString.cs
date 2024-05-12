@@ -2,6 +2,7 @@ namespace LNE.Utilities.Constants
 {
   class GameString
   {
-    public const string GenerateId = "Generate ID";
+    public const string CopyId = "Copy Id";
+    public const string GenerateId = "Generate Id";
   }
 }

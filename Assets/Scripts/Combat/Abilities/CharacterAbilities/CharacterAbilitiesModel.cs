@@ -32,7 +32,9 @@ namespace LNE.Combat.Abilities
       {
         AbilityData abilityData = abilityDataList[i];
 
-        _abilities[abilityData.Id] = new AbilityModel();
+        _abilities[abilityData.Id] = new AbilityModel(
+          new AbilityStatsModel(abilityData.Stats)
+        );
       }
     }
 
@@ -82,6 +84,11 @@ namespace LNE.Combat.Abilities
       }
 
       return 0;
+    }
+
+    public void UpgradeAbility(AbilityUpgradeData abilityUpgradeData)
+    {
+      _abilities[abilityUpgradeData.AbilityData.Id].Upgrade(abilityUpgradeData);
     }
   }
 }
