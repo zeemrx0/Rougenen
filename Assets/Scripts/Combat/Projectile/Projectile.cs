@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using LNE.Characters;
-using LNE.Combat.Abilities;
 using LNE.Core;
 using LNE.GameStats;
 using LNE.Utilities.Constants;

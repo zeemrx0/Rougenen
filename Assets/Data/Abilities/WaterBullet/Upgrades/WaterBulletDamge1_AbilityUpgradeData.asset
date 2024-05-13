@@ -12,27 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915ce1bc691474095ac41c262848fa24, type: 3}
   m_Name: WaterBulletDamge1_AbilityUpgradeData
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 0}
-  <Description>k__BackingField: 
-  <AbilityData>k__BackingField: {fileID: 11400000, guid: 3ac17deed41314eb0aa661f9f41c2e49, type: 2}
-  <Damage>k__BackingField:
-    <ByValue>k__BackingField: 5
-    <ByPercentage>k__BackingField: 0
-  <CooldownTime>k__BackingField:
-    <ByValue>k__BackingField: 0
-    <ByPercentage>k__BackingField: 50
-  <Range>k__BackingField:
-    <ByValue>k__BackingField: 0
-    <ByPercentage>k__BackingField: 0
-  <ProjectileSpeed>k__BackingField:
-    <ByValue>k__BackingField: 0
-    <ByPercentage>k__BackingField: 0
-  <ProjectileAliveRange>k__BackingField:
-    <ByValue>k__BackingField: 0
-    <ByPercentage>k__BackingField: 0
-  <ProjectileQuantity>k__BackingField:
-    <ByValue>k__BackingField: 0
-    <ByPercentage>k__BackingField: 0
-  <ProjectileSpawnDelay>k__BackingField:
-    <ByValue>k__BackingField: 0
-    <ByPercentage>k__BackingField: 0
+  _abilityData: {fileID: 11400000, guid: 3ac17deed41314eb0aa661f9f41c2e49, type: 2}
+  <Name>k__BackingField: Power of Water Spirit
+  <Stats>k__BackingField:
+    _list:
+    - <Name>k__BackingField: Damage
+      <Value>k__BackingField: 100

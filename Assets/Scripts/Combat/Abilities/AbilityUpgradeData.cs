@@ -1,3 +1,4 @@
+using LNE.GameStats;
 using UnityEngine;
 
 namespace LNE.Combat.Abilities
@@ -9,48 +10,20 @@ namespace LNE.Combat.Abilities
   )]
   public class AbilityUpgradeData : ScriptableObject
   {
-    [field: Header("Information")]
-    [field: SerializeField]
-    public Sprite Icon { get; private set; }
+    [SerializeField]
+    private AbilityData _abilityData;
 
     [field: SerializeField]
-    public string Description { get; private set; }
+    public string Name { get; private set; }
 
     [field: SerializeField]
-    public AbilityData AbilityData { get; private set; }
+    public Stats Stats { get; private set; }
 
-    [field: Header("General")]
-    [field: SerializeField]
-    public AbilityUpgradeProperty Damage { get; set; }
-
-    [field: SerializeField]
-    public AbilityUpgradeProperty CooldownTime { get; set; }
-
-    [field: SerializeField]
-    public AbilityUpgradeProperty Range { get; set; }
-
-    [field: Header("Projectile")]
-    [field: SerializeField]
-    public AbilityUpgradeProperty ProjectileSpeed { get; set; }
-
-    [field: SerializeField]
-    public AbilityUpgradeProperty ProjectileAliveRange { get; set; }
-
-    [field: SerializeField]
-    public AbilityUpgradeProperty ProjectileQuantity { get; set; }
-
-    [field: SerializeField]
-    public AbilityUpgradeProperty ProjectileSpawnDelay { get; set; }
-
-    public AbilityUpgradeData()
+    private void OnValidate()
     {
-      Damage = new AbilityUpgradeProperty();
-      CooldownTime = new AbilityUpgradeProperty();
-      Range = new AbilityUpgradeProperty();
-      ProjectileSpeed = new AbilityUpgradeProperty();
-      ProjectileAliveRange = new AbilityUpgradeProperty();
-      ProjectileQuantity = new AbilityUpgradeProperty();
-      ProjectileSpawnDelay = new AbilityUpgradeProperty();
+      Stats.BuildDictionary();
     }
+
+    public string AbilityId => _abilityData.Id;
   }
 }

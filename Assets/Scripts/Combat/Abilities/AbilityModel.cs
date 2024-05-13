@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using LNE.GameStats;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -6,7 +7,9 @@ namespace LNE.Combat.Abilities
 {
   public class AbilityModel
   {
-    public Stats Stats { get; set; }
+    public Stats BaseStats { get; private set; } = new Stats();
+    public Stats Stats { get; set; } = new Stats();
+    public List<Stats> Upgrades { get; set; } = new List<Stats>();
     public IObjectPool<Projectile> ProjectilePool { get; set; }
     public bool IsPerforming { get; set; }
     public bool IsPerformed { get; set; }
@@ -19,14 +22,16 @@ namespace LNE.Combat.Abilities
 
     public AbilityModel()
     {
+      BaseStats = new Stats();
       Stats = new Stats();
+      Upgrades = new List<Stats>();
       Reset();
     }
 
-    public AbilityModel(Stats stats)
+    public void SetBaseStats(Stats stats)
     {
-      Stats = stats;
-      Reset();
+      BaseStats = stats;
+      Stats = new Stats(stats);
     }
 
     public void Reset()
@@ -46,9 +51,10 @@ namespace LNE.Combat.Abilities
       return Stats.Get(name);
     }
 
-    public void Upgrade(AbilityUpgradeData upgradeData)
+    public void AddUpgrade(AbilityUpgradeData upgradeData)
     {
-      // Stats.Upgrade(upgradeData);
+      Upgrades.Add(upgradeData.Stats);
+      Stats.Add(upgradeData.Stats);
     }
   }
 }

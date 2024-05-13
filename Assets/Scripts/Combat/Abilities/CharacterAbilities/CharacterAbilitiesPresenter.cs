@@ -32,8 +32,9 @@ namespace LNE.Combat.Abilities
 
       foreach (var abilityData in _abilityDataList)
       {
-        if (abilityData.GetStat("Is Passive") == 1)
+        if (abilityData.GetStat(StatName.IsPassive) == 1)
         {
+          _model.GetAbilityModel(abilityData).SetBaseStats(abilityData.Stats);
           abilityData.Perform(this, _model.GetAbilityModel(abilityData));
         }
       }

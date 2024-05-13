@@ -86,7 +86,9 @@ namespace LNE.Combat.Abilities
 
     public void UpgradeAbility(AbilityUpgradeData abilityUpgradeData)
     {
-      _abilitiesModels[abilityUpgradeData.AbilityData.Id].Upgrade(abilityUpgradeData);
+      _abilitiesModels[abilityUpgradeData.AbilityId].AddUpgrade(
+        abilityUpgradeData
+      );
     }
   }
 }

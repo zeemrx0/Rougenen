@@ -13,6 +13,18 @@ namespace LNE.GameStats
     private Dictionary<string, Stat> _dictionary =
       new Dictionary<string, Stat>();
 
+    public Stats() { }
+
+    public Stats(Stats stats)
+    {
+      foreach (var stat in stats._list)
+      {
+        _list.Add(new Stat { Name = stat.Name, Value = stat.Value });
+      }
+
+      BuildDictionary();
+    }
+
     public void BuildDictionary()
     {
       _dictionary.Clear();
@@ -34,8 +46,23 @@ namespace LNE.GameStats
 
     public void Add(string name, float value)
     {
+      if (_dictionary.ContainsKey(name))
+      {
+        _dictionary[name].Value += value;
+
+        return;
+      }
+
       _list.Add(new Stat { Name = name, Value = value });
       _dictionary[name] = _list[^1];
+    }
+
+    public void Add(Stats stats)
+    {
+      foreach (var stat in stats._list)
+      {
+        Add(stat.Name, stat.Value);
+      }
     }
 
     public void Remove(string name)
