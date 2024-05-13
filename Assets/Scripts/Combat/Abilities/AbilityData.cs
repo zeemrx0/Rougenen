@@ -25,12 +25,29 @@ namespace LNE.Combat.Abilities
     private AbilityEffectStrategyData _effectStrategy;
 
     [field: SerializeField]
-    public Stats Stats { get; set; } = new Stats();
+    private Stats _stats = new Stats();
+
+    public Stats Stats
+    {
+      get
+      {
+        Stats stats = new Stats();
+
+        stats.Add(_stats);
+
+        if (_effectStrategy != null)
+        {
+          stats.Add(_effectStrategy.Stats);
+        }
+
+        return stats;
+      }
+    }
 
     protected override void OnValidate()
     {
       base.OnValidate();
-      Stats.BuildDictionary();
+      _stats.BuildDictionary();
     }
 
     public IObjectPool<Projectile> InitProjectilePool()
@@ -105,25 +122,19 @@ namespace LNE.Combat.Abilities
 
     public float GetStat(string name)
     {
-      return Stats.Get(name);
+      return _stats.Get(name);
     }
 
     public void InitStats()
     {
-      Stats.Clear();
-      Stats.Add(StatName.IsPassive, 0);
-      Stats.Add(StatName.UseOnStart, 0);
-      Stats.Add(StatName.IgnoreLayers, 0);
+      _stats.Clear();
+      _stats.Add(StatName.IsPassive, 0);
+      _stats.Add(StatName.UseOnStart, 0);
+      _stats.Add(StatName.IgnoreLayers, 0);
 
-      Stats.Add(StatName.Damage, 0);
-      Stats.Add(StatName.Range, 0);
-      Stats.Add(StatName.CooldownTime, 0);
-
-      Stats.Add(StatName.DestroyProjectileOnCollision, 0);
-      Stats.Add(StatName.ProjectileSpeed, 0);
-      Stats.Add(StatName.ProjectileAliveRange, 1000000000f);
-      Stats.Add(StatName.ProjectileQuantity, 0);
-      Stats.Add(StatName.ProjectileSpawnDelay, 0);
+      _stats.Add(StatName.Damage, 0);
+      _stats.Add(StatName.Range, 0);
+      _stats.Add(StatName.CooldownTime, 0);
     }
   }
 }
