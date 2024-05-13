@@ -1,5 +1,6 @@
 using System;
 using LNE.Characters;
+using LNE.Utilities.Constants;
 using UnityEngine;
 
 namespace LNE.Combat.Abilities
@@ -30,7 +31,7 @@ namespace LNE.Combat.Abilities
     {
       RaycastHit2D[] hits = Physics2D.CircleCastAll(
         characterAbilitiesPresenter.transform.position,
-        abilityModel.Stats.Range,
+        abilityModel.GetStat(StatName.Range),
         Vector2.zero,
         0f
       );

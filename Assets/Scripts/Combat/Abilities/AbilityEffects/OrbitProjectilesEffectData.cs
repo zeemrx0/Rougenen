@@ -1,5 +1,7 @@
 using LNE.Characters;
 using LNE.Core;
+using LNE.GameStats;
+using LNE.Utilities.Constants;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -31,23 +33,19 @@ namespace LNE.Combat.Abilities
     {
       for (
         int i = 0;
-        i < abilityModel.Stats.ProjectileQuantity;
+        i < (int)abilityModel.GetStat(StatName.ProjectileQuantity);
         i++
       )
       {
         float angle =
-          i * 360f / abilityModel.Stats.ProjectileQuantity;
-        SpawnProjectile(
-          characterAbilitiesPresenter,
-          abilityModel.Stats,
-          angle
-        );
+          i * 360f / abilityModel.GetStat(StatName.ProjectileQuantity);
+        SpawnProjectile(characterAbilitiesPresenter, abilityModel.Stats, angle);
       }
     }
 
     private void SpawnProjectile(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsModel abilityStatsModel,
+      Stats stats,
       float angle
     )
     {
@@ -55,7 +53,7 @@ namespace LNE.Combat.Abilities
 
       projectile.Owner =
         characterAbilitiesPresenter.gameObject.GetComponent<Character>();
-      projectile.AbilityStatsModel = abilityStatsModel;
+      projectile.Stats = stats;
       projectile.OnHitSound = _onHitSound;
       projectile.OnHitVFX = _onHitVFX;
       projectile.StartOrbit(angle);

@@ -1,4 +1,6 @@
+using LNE.GameStats;
 using LNE.Utilities;
+using LNE.Utilities.Constants;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -23,11 +25,13 @@ namespace LNE.Combat.Abilities
     private AbilityEffectStrategyData _effectStrategy;
 
     [SerializeField]
-    public AbilityStatsData Stats;
+    private Stats _stats = new Stats();
 
-    public bool IsPassive => Stats.IsPassive;
-
-    public bool UseOnStart => Stats.UseOnStart;
+    protected override void OnValidate()
+    {
+      base.OnValidate();
+      _stats.BuildDictionary();
+    }
 
     public IObjectPool<Projectile> InitProjectilePool()
     {
@@ -44,7 +48,7 @@ namespace LNE.Combat.Abilities
         return false;
       }
 
-      abilityModel.Stats.BaseStats = Stats;
+      abilityModel.Stats = _stats;
 
       string abilityName = GetAbilityName();
 
@@ -86,7 +90,7 @@ namespace LNE.Combat.Abilities
     {
       characterAbilitiesPresenter.StartCooldown(
         this,
-        abilityModel.Stats.CooldownTime
+        abilityModel.GetStat(StatName.CooldownTime)
       );
 
       _effectStrategy.StartEffect(
@@ -99,6 +103,29 @@ namespace LNE.Combat.Abilities
     private string GetAbilityName()
     {
       return name.Split(DefaultFileName)[0];
+    }
+
+    public float GetStat(string name)
+    {
+      return _stats.Get(name);
+    }
+
+    public void InitStats()
+    {
+      _stats.Clear();
+      _stats.Add(StatName.IsPassive, 0);
+      _stats.Add(StatName.UseOnStart, 0);
+      _stats.Add(StatName.IgnoreLayers, 0);
+
+      _stats.Add(StatName.Damage, 0);
+      _stats.Add(StatName.Range, 0);
+      _stats.Add(StatName.CooldownTime, 0);
+
+      _stats.Add(StatName.DestroyProjectileOnCollision, 0);
+      _stats.Add(StatName.ProjectileSpeed, 0);
+      _stats.Add(StatName.ProjectileAliveRange, 0);
+      _stats.Add(StatName.ProjectileQuantity, 0);
+      _stats.Add(StatName.ProjectileSpawnDelay, 0);
     }
   }
 }

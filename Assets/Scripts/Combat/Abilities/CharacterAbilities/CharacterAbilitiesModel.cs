@@ -6,7 +6,7 @@ namespace LNE.Combat.Abilities
 {
   public class CharacterAbilitiesModel
   {
-    private Dictionary<string, AbilityModel> _abilities =
+    private Dictionary<string, AbilityModel> _abilitiesModels =
       new Dictionary<string, AbilityModel>();
 
     private Dictionary<string, float> _cooldownTimers =
@@ -21,20 +21,18 @@ namespace LNE.Combat.Abilities
 
     public AbilityModel GetAbilityModel(AbilityData abilityData)
     {
-      return _abilities[abilityData.Id];
+      return _abilitiesModels[abilityData.Id];
     }
 
     public void Init(List<AbilityData> abilityDataList)
     {
-      _abilities = new Dictionary<string, AbilityModel>();
+      _abilitiesModels = new Dictionary<string, AbilityModel>();
 
       for (int i = 0; i < abilityDataList.Count; ++i)
       {
         AbilityData abilityData = abilityDataList[i];
 
-        _abilities[abilityData.Id] = new AbilityModel(
-          new AbilityStatsModel(abilityData.Stats)
-        );
+        _abilitiesModels[abilityData.Id] = new AbilityModel();
       }
     }
 
@@ -88,7 +86,7 @@ namespace LNE.Combat.Abilities
 
     public void UpgradeAbility(AbilityUpgradeData abilityUpgradeData)
     {
-      _abilities[abilityUpgradeData.AbilityData.Id].Upgrade(abilityUpgradeData);
+      _abilitiesModels[abilityUpgradeData.AbilityData.Id].Upgrade(abilityUpgradeData);
     }
   }
 }

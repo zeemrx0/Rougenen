@@ -3,6 +3,7 @@ using System.Collections;
 using LNE.Characters;
 using LNE.Combat.Abilities;
 using LNE.Core;
+using LNE.GameStats;
 using LNE.Utilities.Constants;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -12,7 +13,7 @@ namespace LNE.Combat
   public class Projectile : MonoBehaviour
   {
     public Character Owner { get; set; }
-    public AbilityStatsModel AbilityStatsModel { get; set; }
+    public Stats Stats { get; set; }
     public IObjectPool<Projectile> BelongingPool { get; set; }
     public VFX OnHitVFX { get; set; }
     public SoundData OnHitSound { get; set; }
@@ -32,7 +33,10 @@ namespace LNE.Combat
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      if ((AbilityStatsModel.IgnoreLayers & (1 << other.gameObject.layer)) > 0)
+      if (
+        ((int)Stats.Get(StatName.IgnoreLayers) & (1 << other.gameObject.layer))
+        > 0
+      )
       {
         return;
       }
@@ -60,9 +64,9 @@ namespace LNE.Combat
           other.TryGetComponent<CharacterHealthPresenter>(
             out CharacterHealthPresenter health
           );
-          health?.TakeDamage(AbilityStatsModel.Damage);
+          health?.TakeDamage(Stats.Get(StatName.Damage));
 
-          if (AbilityStatsModel.DestroyProjectileOnCollision)
+          if (Stats.Get(StatName.DestroyProjectileOnCollision) == 1)
           {
             _isDestroyedOnCollision = true;
 
@@ -89,7 +93,7 @@ namespace LNE.Combat
 
       if (
         Vector2.Distance(transform.position, _lastOwnerPosition)
-        > AbilityStatsModel.ProjectileAliveRange
+        > Stats.Get(StatName.ProjectileAliveRange)
       )
       {
         Deactivate(0);
@@ -100,14 +104,14 @@ namespace LNE.Combat
         Vector2 targetPosition =
           (
             Quaternion.Euler(0, 0, -_lastAngle)
-            * (Vector2.up * AbilityStatsModel.Range)
+            * (Vector2.up * Stats.Get(StatName.Range))
           ) + Owner.transform.position;
 
         transform.position = targetPosition;
 
         _lastAngle +=
-          AbilityStatsModel.ProjectileSpeed
-          / (2 * (float)Math.PI * AbilityStatsModel.Range)
+          Stats.Get(StatName.ProjectileSpeed)
+          / (2 * (float)Math.PI * Stats.Get(StatName.Range))
           * 360
           * Time.deltaTime;
 

@@ -1,62 +1,40 @@
-using UnityEngine;
+// using LNE.GameStats;
+// using LNE.Utilities;
+// using LNE.Utilities.Constants;
+// using UnityEngine;
 
-namespace LNE.Combat.Abilities
-{
-  [CreateAssetMenu(
-    fileName = "_AbilityStatsData",
-    menuName = "Abilities/Ability Stats",
-    order = 0
-  )]
-  public class AbilityStatsData : ScriptableObject
-  {
-    [field: Header("General")]
-    [field: SerializeField]
-    public bool IsPassive { get; private set; }
+// namespace LNE.Combat.Abilities
+// {
+//   [CreateAssetMenu(
+//     fileName = "_AbilityStatsData",
+//     menuName = "Abilities/Ability Stats",
+//     order = 0
+//   )]
+//   public class AbilityStatsData : ScriptableObjectWithId
+//   {
+    
 
-    [field: SerializeField]
-    public bool UseOnStart { get; private set; }
+//     public void Init()
+//     {
+//       Stats = new Stats();
+//       Stats.Add(StatName.IsPassive, 0);
+//       Stats.Add(StatName.UseOnStart, 0);
+//       Stats.Add(StatName.IgnoreLayers, 0);
 
-    [field: SerializeField]
-    public LayerMask IgnoreLayers { get; set; }
+//       Stats.Add(StatName.Damage, 0);
+//       Stats.Add(StatName.Range, 0);
+//       Stats.Add(StatName.CooldownTime, 0);
 
-    [field: SerializeField]
-    public float Damage { get; set; }
+//       Stats.Add(StatName.DestroyProjectileOnCollision, 0);
+//       Stats.Add(StatName.ProjectileSpeed, 0);
+//       Stats.Add(StatName.ProjectileAliveRange, 0);
+//       Stats.Add(StatName.ProjectileQuantity, 0);
+//       Stats.Add(StatName.ProjectileSpawnDelay, 0);
+//     }
 
-    [field: SerializeField]
-    public float CooldownTime { get; set; }
-
-    [field: SerializeField]
-    public float Range { get; set; }
-
-    [field: Header("Projectile")]
-    [field: SerializeField]
-    public bool DestroyProjectileOnCollision { get; set; }
-
-    [field: SerializeField]
-    public float ProjectileSpeed { get; set; }
-
-    [field: SerializeField]
-    public float ProjectileAliveRange { get; set; }
-
-    [field: SerializeField]
-    public int ProjectileQuantity { get; set; }
-
-    [field: SerializeField]
-    public float ProjectileSpawnDelay { get; set; }
-
-    public AbilityStatsData()
-    {
-      IsPassive = true;
-      UseOnStart = false;
-      IgnoreLayers = 0;
-      Damage = 0f;
-      CooldownTime = 0f;
-      Range = 0f;
-      DestroyProjectileOnCollision = false;
-      ProjectileSpeed = 0f;
-      ProjectileAliveRange = 1000000000f;
-      ProjectileQuantity = 0;
-      ProjectileSpawnDelay = 0.5f;
-    }
-  }
-}
+//     public float Get(string name)
+//     {
+//       return Stats.Get(name).Value;
+//     }
+//   }
+// }

@@ -1,3 +1,4 @@
+using LNE.GameStats;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -5,7 +6,7 @@ namespace LNE.Combat.Abilities
 {
   public class AbilityModel
   {
-    public AbilityStatsModel Stats { get; set; }
+    public Stats Stats { get; set; }
     public IObjectPool<Projectile> ProjectilePool { get; set; }
     public bool IsPerforming { get; set; }
     public bool IsPerformed { get; set; }
@@ -18,11 +19,11 @@ namespace LNE.Combat.Abilities
 
     public AbilityModel()
     {
-      Stats = new AbilityStatsModel();
+      Stats = new Stats();
       Reset();
     }
 
-    public AbilityModel(AbilityStatsModel stats)
+    public AbilityModel(Stats stats)
     {
       Stats = stats;
       Reset();
@@ -40,9 +41,14 @@ namespace LNE.Combat.Abilities
       ProjectileQuantity = 0;
     }
 
+    public float GetStat(string name)
+    {
+      return Stats.Get(name);
+    }
+
     public void Upgrade(AbilityUpgradeData upgradeData)
     {
-      Stats.Upgrade(upgradeData);
+      // Stats.Upgrade(upgradeData);
     }
   }
 }

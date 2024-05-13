@@ -1,6 +1,8 @@
 using System.Collections;
 using LNE.Characters;
 using LNE.Core;
+using LNE.GameStats;
+using LNE.Utilities.Constants;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -53,30 +55,35 @@ namespace LNE.Combat.Abilities
       AbilityModel abilityModel
     )
     {
-      for (int i = 0; i < abilityModel.Stats.ProjectileQuantity; i++)
+      for (
+        int i = 0;
+        i < abilityModel.GetStat(StatName.ProjectileQuantity);
+        i++
+      )
       {
         SpawnProjectile(
           characterAbilitiesPresenter,
           abilityModel.Stats,
-          abilityModel.TargetingDirection * abilityModel.Stats.ProjectileSpeed
+          abilityModel.TargetingDirection
+            * abilityModel.GetStat(StatName.ProjectileSpeed)
         );
 
         yield return new WaitForSeconds(
-          abilityModel.Stats.ProjectileSpawnDelay
+          abilityModel.GetStat(StatName.ProjectileSpawnDelay)
         );
       }
     }
 
     private void SpawnProjectile(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsModel abilityStatsModel,
+      Stats stats,
       Vector2 velocity
     )
     {
       Projectile projectile = Instantiate(_projectile);
 
       projectile.Owner = characterAbilitiesPresenter.GetComponent<Character>();
-      projectile.AbilityStatsModel = abilityStatsModel;
+      projectile.Stats = stats;
       projectile.OnHitSound = _onHitSound;
       projectile.OnHitVFX = _onHitVFX;
       projectile.transform.position = characterAbilitiesPresenter

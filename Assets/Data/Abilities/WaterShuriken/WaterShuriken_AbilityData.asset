@@ -15,5 +15,27 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 1994205380, guid: 5e8c92f59a9064c9889d034b7b948b06, type: 3}
   _targetingStrategy: {fileID: 0}
   _effectStrategy: {fileID: 11400000, guid: ef23dfafd1f8c43fb93c13f871de27cf, type: 2}
-  _abilityStatsData: {fileID: 11400000, guid: 7f760cd83526542bab71737f8edc64e4, type: 2}
-  <IsPassive>k__BackingField: 1
+  _stats:
+    _list:
+    - <Name>k__BackingField: Is Passive
+      <Value>k__BackingField: 1
+    - <Name>k__BackingField: Use On Start
+      <Value>k__BackingField: 1
+    - <Name>k__BackingField: Ignore Layers
+      <Value>k__BackingField: 640
+    - <Name>k__BackingField: Damage
+      <Value>k__BackingField: 5
+    - <Name>k__BackingField: Range
+      <Value>k__BackingField: 2.5
+    - <Name>k__BackingField: Cooldown Time
+      <Value>k__BackingField: 0
+    - <Name>k__BackingField: Destroy Projectile On Collision
+      <Value>k__BackingField: 0
+    - <Name>k__BackingField: Projectile Speed
+      <Value>k__BackingField: 3
+    - <Name>k__BackingField: Projectile Alive Range
+      <Value>k__BackingField: 1e+9
+    - <Name>k__BackingField: Projectile Quantity
+      <Value>k__BackingField: 3
+    - <Name>k__BackingField: Projectile Spawn Delay
+      <Value>k__BackingField: 0

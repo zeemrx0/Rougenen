@@ -4,5 +4,6 @@ namespace LNE.Utilities.Constants
   {
     public const string CopyId = "Copy Id";
     public const string GenerateId = "Generate Id";
+    public const string InitStats = "Init Stats";
   }
 }
