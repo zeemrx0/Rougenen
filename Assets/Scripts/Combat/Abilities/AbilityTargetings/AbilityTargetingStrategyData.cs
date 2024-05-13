@@ -9,7 +9,6 @@ namespace LNE.Combat.Abilities
 
     public abstract void StartTargeting(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel,
       Action onTargetAcquired
     );

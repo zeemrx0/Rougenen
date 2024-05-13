@@ -1,3 +1,4 @@
+using LNE.GameStats;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -5,6 +6,9 @@ namespace LNE.Combat.Abilities
 {
   public abstract class AbilityEffectStrategyData : ScriptableObject
   {
+    [field: SerializeField]
+    public Stats Stats { get; protected set; } = new Stats();
+
     public virtual IObjectPool<Projectile> InitProjectilePool()
     {
       return null;
@@ -12,7 +16,6 @@ namespace LNE.Combat.Abilities
 
     public abstract void StartEffect(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel,
       IObjectPool<Projectile> projectilePool
     );

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using LNE.Characters;
 using LNE.Core;
+using LNE.Utilities.Constants;
 using UnityEngine;
 
 namespace LNE.Combat.Abilities
@@ -31,8 +32,9 @@ namespace LNE.Combat.Abilities
 
       foreach (var abilityData in _abilityDataList)
       {
-        if (abilityData.IsPassive)
+        if (abilityData.GetStat(StatName.IsPassive) == 1)
         {
+          _model.GetAbilityModel(abilityData).SetBaseStats(abilityData.Stats);
           abilityData.Perform(this, _model.GetAbilityModel(abilityData));
         }
       }
@@ -42,9 +44,12 @@ namespace LNE.Combat.Abilities
     {
       _model.CoolDownAbilities();
 
-      foreach (var abilityData in _abilityDataList)
+      foreach (AbilityData abilityData in _abilityDataList)
       {
-        if (abilityData.IsPassive && !abilityData.UseOnStart)
+        if (
+          abilityData.GetStat(StatName.IsPassive) == 1
+          && abilityData.GetStat(StatName.UseOnStart) != 1
+        )
         {
           abilityData.Perform(this, _model.GetAbilityModel(abilityData));
         }

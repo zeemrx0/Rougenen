@@ -16,13 +16,22 @@ namespace LNE.Utilities
 
     public override void OnInspectorGUI()
     {
+      _object ??= (IContainsId)target;
+
       EditorGUILayout.LabelField(GameProperty.Id, _object.Id);
-      base.OnInspectorGUI();
+
+      if (GUILayout.Button(GameString.CopyId))
+      {
+        EditorGUIUtility.systemCopyBuffer = _object.Id;
+      }
+
       if (GUILayout.Button(GameString.GenerateId))
       {
         _object.Id = System.Guid.NewGuid().ToString();
         EditorUtility.SetDirty(_object as Object);
       }
+
+      base.OnInspectorGUI();
     }
   }
 }

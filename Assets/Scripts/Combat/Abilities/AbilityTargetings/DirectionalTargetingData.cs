@@ -1,5 +1,6 @@
 using System;
 using LNE.Characters;
+using LNE.Utilities.Constants;
 using UnityEngine;
 
 namespace LNE.Combat.Abilities
@@ -15,28 +16,22 @@ namespace LNE.Combat.Abilities
 
     public override void StartTargeting(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel,
       Action onTargetAcquired
     )
     {
-      GetTargetDirection(
-        characterAbilitiesPresenter,
-        abilityStatsData,
-        abilityModel
-      );
+      GetTargetDirection(characterAbilitiesPresenter, abilityModel);
       onTargetAcquired?.Invoke();
     }
 
     private Vector2 GetTargetDirection(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
-      AbilityStatsData abilityStatsData,
       AbilityModel abilityModel
     )
     {
       RaycastHit2D[] hits = Physics2D.CircleCastAll(
         characterAbilitiesPresenter.transform.position,
-        abilityStatsData.Range,
+        abilityModel.GetStat(StatName.Range),
         Vector2.zero,
         0f
       );

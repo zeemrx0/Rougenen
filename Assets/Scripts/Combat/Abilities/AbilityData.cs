@@ -1,4 +1,6 @@
+using LNE.GameStats;
 using LNE.Utilities;
+using LNE.Utilities.Constants;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -22,12 +24,31 @@ namespace LNE.Combat.Abilities
     [SerializeField]
     private AbilityEffectStrategyData _effectStrategy;
 
-    [SerializeField]
-    private AbilityStatsData _abilityStatsData;
+    [field: SerializeField]
+    private Stats _stats = new Stats();
 
-    public bool IsPassive => _abilityStatsData.IsPassive;
+    public Stats Stats
+    {
+      get
+      {
+        Stats stats = new Stats();
 
-    public bool UseOnStart => _abilityStatsData.UseOnStart;
+        stats.Add(_stats);
+
+        if (_effectStrategy != null)
+        {
+          stats.Add(_effectStrategy.Stats);
+        }
+
+        return stats;
+      }
+    }
+
+    protected override void OnValidate()
+    {
+      base.OnValidate();
+      _stats.BuildDictionary();
+    }
 
     public IObjectPool<Projectile> InitProjectilePool()
     {
@@ -53,7 +74,6 @@ namespace LNE.Combat.Abilities
       {
         _effectStrategy.StartEffect(
           characterAbilitiesPresenter,
-          _abilityStatsData,
           abilityModel,
           abilityModel.ProjectilePool
         );
@@ -63,7 +83,6 @@ namespace LNE.Combat.Abilities
 
       _targetingStrategy.StartTargeting(
         characterAbilitiesPresenter,
-        _abilityStatsData,
         abilityModel,
         () =>
         {
@@ -86,12 +105,11 @@ namespace LNE.Combat.Abilities
     {
       characterAbilitiesPresenter.StartCooldown(
         this,
-        _abilityStatsData.CooldownTime
+        abilityModel.GetStat(StatName.CooldownTime)
       );
 
       _effectStrategy.StartEffect(
         characterAbilitiesPresenter,
-        _abilityStatsData,
         abilityModel,
         projectilePool
       );
@@ -100,6 +118,23 @@ namespace LNE.Combat.Abilities
     private string GetAbilityName()
     {
       return name.Split(DefaultFileName)[0];
+    }
+
+    public float GetStat(string name)
+    {
+      return _stats.Get(name);
+    }
+
+    public void InitStats()
+    {
+      _stats.Clear();
+      _stats.Add(StatName.IsPassive, 0);
+      _stats.Add(StatName.UseOnStart, 0);
+      _stats.Add(StatName.IgnoreLayers, 0);
+
+      _stats.Add(StatName.Damage, 0);
+      _stats.Add(StatName.Range, 0);
+      _stats.Add(StatName.CooldownTime, 0);
     }
   }
 }
