@@ -2,7 +2,7 @@ using System;
 using LNE.Characters;
 using UnityEngine;
 
-namespace LNE.GameLevels
+namespace LNE.GameChallenge
 {
   [Serializable]
   public class GameLevelUnit : ICloneable

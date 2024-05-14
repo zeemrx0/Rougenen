@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LNE.GameLevels
+namespace LNE.GameChallenge
 {
   [CreateAssetMenu(
     fileName = "_GameLevelData",

@@ -3,17 +3,17 @@ using LNE.Characters;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace LNE.GameLevels
+namespace LNE.GameChallenge
 {
   public class CharacterSpawner : MonoBehaviour
   {
-    private List<Vector3> _canSpawnPositions = new List<Vector3>();
-
+    [SerializeField]
     private Tilemap _tilemap;
+
+    private List<Vector3> _canSpawnPositions = new List<Vector3>();
 
     private void Awake()
     {
-      _tilemap = GetComponent<Tilemap>();
       InitCanSpawnPositions();
     }
 

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1fbd03a7abc448b9894e3117972506, type: 3}
+  m_Name: Challenge1_GameDifficultyData
+  m_EditorClassIdentifier: 
+  <Levels>k__BackingField:
+  - {fileID: 11400000, guid: a388a7329117b49bb9beae197c88b10d, type: 2}
+  - {fileID: 11400000, guid: 0c4ae341475f340f2a645e0374c287a8, type: 2}

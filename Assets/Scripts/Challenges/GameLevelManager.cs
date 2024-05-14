@@ -1,17 +1,25 @@
 using UnityEngine;
+using Zenject;
 
-namespace LNE.GameLevels
+namespace LNE.GameChallenge
 {
   [RequireComponent(typeof(CharacterSpawner))]
-  public class GameLevel : MonoBehaviour
+  public class GameLevelManager : MonoBehaviour
   {
-    [SerializeField]
-    private GameLevelData _data;
+    #region Injected
+    private GameChallengeManager _challengeManager;
+    #endregion
 
     private CharacterSpawner _spawner;
     private GameLevelModel _model = new GameLevelModel();
 
     private float _timeUntilNextWave = 0f;
+
+    [Inject]
+    public void Construct(GameChallengeManager challengeManager)
+    {
+      _challengeManager = challengeManager;
+    }
 
     private void Awake()
     {
@@ -20,7 +28,7 @@ namespace LNE.GameLevels
 
     private void Start()
     {
-      _model = new GameLevelModel(_data);
+      _model = new GameLevelModel(_challengeManager.CurrentLevelData);
     }
 
     private void Update()
@@ -30,7 +38,7 @@ namespace LNE.GameLevels
       if (_timeUntilNextWave <= 0f)
       {
         SpawnNextWave();
-        _timeUntilNextWave = _data.TimeBetweenWaves;
+        _timeUntilNextWave = _model.Data.TimeBetweenWaves;
       }
     }
 
@@ -38,14 +46,14 @@ namespace LNE.GameLevels
     {
       _model.CurrentWave++;
 
-      if (_model.CurrentWave >= _data.WaveCount)
+      if (_model.CurrentWave >= _model.Data.WaveCount)
       {
         return;
       }
 
       foreach (GameLevelUnit unit in _model.Units)
       {
-        int remainingWaves = _data.WaveCount - _model.CurrentWave;
+        int remainingWaves = _model.Data.WaveCount - _model.CurrentWave;
 
         if (_model.CurrentWave >= unit.StartWave)
         {

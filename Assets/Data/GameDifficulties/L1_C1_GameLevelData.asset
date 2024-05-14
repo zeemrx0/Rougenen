@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7986502e5f0be4213b591519b8d778e7, type: 3}
-  m_Name: Level1_GameLevelData
+  m_Name: L1_C1_GameLevelData
   m_EditorClassIdentifier: 
-  <WaveCount>k__BackingField: 4
+  <WaveCount>k__BackingField: 3
   <TimeBetweenWaves>k__BackingField: 10
   <Units>k__BackingField:
   - <Character>k__BackingField: {fileID: 5895173932828943165, guid: 0e1de7d1392404cf9ac6e497be47d639, type: 3}
-    <Quantity>k__BackingField: 20
+    <Quantity>k__BackingField: 10
     <StartWave>k__BackingField: 1
