@@ -1,13 +1,13 @@
-using System.Collections.Generic;
-using LNE.Combat.Abilities;
 using UnityEngine;
-using Zenject;
 
 namespace LNE.Challenges
 {
   [RequireComponent(typeof(CharacterSpawner))]
   public class EnemyWaveManager : MonoBehaviour
   {
+    [SerializeField]
+    private EnemyWaveInfoUI _enemyWaveInfoUI;
+
     private CharacterSpawner _spawner;
     private EnemyWaveModel _model;
 
@@ -15,8 +15,6 @@ namespace LNE.Challenges
     {
       _spawner = GetComponent<CharacterSpawner>();
     }
-
-    private void Start() { }
 
     private void Update()
     {
@@ -33,11 +31,17 @@ namespace LNE.Challenges
 
       _model.TimeUntilNextSubWave -= Time.deltaTime;
       _model.TimeUntilEndWave -= Time.deltaTime;
+
+      _enemyWaveInfoUI.SetWaveProgress(
+        1f - _model.TimeUntilEndWave / _model.Data.Duration
+      );
     }
 
-    public void StartWave(EnemyWaveData data)
+    public void StartWave(EnemyWaveData data, int waveIndex)
     {
-      _model = new EnemyWaveModel(data);
+      _model = new EnemyWaveModel(data, waveIndex);
+      _enemyWaveInfoUI.SetWaveProgress(0f);
+      _enemyWaveInfoUI.SetCurrentWaveIndex(waveIndex + 1);
     }
 
     public void SpawnSubNextWave()

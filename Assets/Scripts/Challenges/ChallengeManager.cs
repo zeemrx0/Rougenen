@@ -52,7 +52,7 @@ namespace LNE.Challenges
       }
 
       _model.CurrentWave++;
-      _enemyWaveManager.StartWave(CurrentEnemyWaveData);
+      _enemyWaveManager.StartWave(CurrentEnemyWaveData, _model.CurrentWave);
       _model.TimeUntilNextWave = CurrentEnemyWaveData.Duration;
     }
 
