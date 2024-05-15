@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using LNE.Combat.Abilities;
-using LNE.Utilities.Constants;
+using LNE.Core;
 using UnityEngine;
+using Zenject;
 
 namespace LNE.Challenges
 {
@@ -16,16 +17,25 @@ namespace LNE.Challenges
     [SerializeField]
     private List<AbilityUpgradeData> _waveRewards;
 
+    #region Injected
+    private GameSceneManager _gameSceneManager;
+    #endregion
+
     private ChallengeModel _model = new ChallengeModel();
     private EnemyWaveManager _enemyWaveManager;
 
     public EnemyWaveData CurrentEnemyWaveData => _model.CurrentEnemyWaveData;
 
+    [Inject]
+    public void Construct(GameSceneManager gameSceneManager)
+    {
+      _gameSceneManager = gameSceneManager;
+    }
+
     private void Awake()
     {
       _model = new ChallengeModel(_data);
       _enemyWaveManager = GetComponent<EnemyWaveManager>();
-      LoadFromFile();
     }
 
     private void Update()
@@ -79,15 +89,14 @@ namespace LNE.Challenges
       Debug.Log("Challenge Ended");
     }
 
-    public void LoadFromFile()
+    public void TryAgain()
     {
-      if (ES3.KeyExists(SavingKey.GameChallenge, SavingPath.GameChallenge))
-      {
-        _model = ES3.Load<ChallengeModel>(
-          SavingKey.GameChallenge,
-          SavingPath.GameChallenge
-        );
-      }
+      Time.timeScale = 1f;
+      _gameSceneManager.LoadScene(
+        _gameSceneManager.CurrentSceneName,
+        null,
+        false
+      );
     }
   }
 }
