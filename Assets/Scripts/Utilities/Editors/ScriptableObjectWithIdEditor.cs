@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using LNE.Utilities.Constants;
@@ -8,11 +9,6 @@ namespace LNE.Utilities
   public class ScriptableObjectWithIdEditor : Editor
   {
     private IContainsId _object;
-
-    private void Awake()
-    {
-      _object = (IContainsId)target;
-    }
 
     public override void OnInspectorGUI()
     {
@@ -35,3 +31,4 @@ namespace LNE.Utilities
     }
   }
 }
+#endif

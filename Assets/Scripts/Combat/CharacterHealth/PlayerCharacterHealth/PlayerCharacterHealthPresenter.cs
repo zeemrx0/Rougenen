@@ -1,13 +1,19 @@
-using LNE.Core;
-using LNE.Utilities.Constants;
-using UnityEngine;
+using LNE.Inputs;
+using Zenject;
 
 namespace LNE.Combat
 {
   public class PlayerCharacterHealthPresenter : CharacterHealthPresenter
   {
-    [SerializeField]
-    private GameOverPopup _gameOverPopup;
+    #region Injected
+    private PlayerInputManager _playerInputManager;
+    #endregion
+
+    [Inject]
+    public void Construct(PlayerInputManager playerInputManager)
+    {
+      _playerInputManager = playerInputManager;
+    }
 
     protected override void Awake()
     {
@@ -17,8 +23,8 @@ namespace LNE.Combat
 
     protected override void Die()
     {
+      _playerInputManager.Disable();
       base.Die();
-      _gameOverPopup.Show(GameString.GameOver, GameString.TryBetterNextTime);
     }
   }
 }

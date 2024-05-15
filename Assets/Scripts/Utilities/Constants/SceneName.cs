@@ -2,7 +2,7 @@ namespace LNE.Utilities.Constants
 {
   public class SceneName
   {
-    public const string MainMenuScene = "MainMenuScene";
-    public const string ChallengeScene = "ChallengeScene";
+    public const string MainMenu = "MainMenu_Scene";
+    public const string Challenge = "Challenge_Scene";
   }
 }

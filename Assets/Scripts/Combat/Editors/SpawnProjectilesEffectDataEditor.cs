@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using LNE.Utilities.Constants;
@@ -9,11 +10,6 @@ namespace LNE.Combat.Editors
   public class SpawnProjectilesEffectDataEditor : Editor
   {
     private SpawnProjectilesEffectData _object;
-
-    private void Awake()
-    {
-      _object = (SpawnProjectilesEffectData)target;
-    }
 
     public override void OnInspectorGUI()
     {
@@ -29,3 +25,4 @@ namespace LNE.Combat.Editors
     }
   }
 }
+#endif

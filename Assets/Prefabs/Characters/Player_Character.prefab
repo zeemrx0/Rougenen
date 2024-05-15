@@ -201,7 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd136bf4d05e9487ebeb3647658327b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameOverCanvas: {fileID: 0}
 --- !u!114 &3186076060591943712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53506111a32d14ce9b7ca7bfcaa15da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _abilityDataList: []
+  _abilityDataList:
+  - {fileID: 11400000, guid: 1d2e560e961994658850683cfe1a1103, type: 2}
+  - {fileID: 11400000, guid: 3ac17deed41314eb0aa661f9f41c2e49, type: 2}
 --- !u!114 &8057223350170425432
 MonoBehaviour:
   m_ObjectHideFlags: 0

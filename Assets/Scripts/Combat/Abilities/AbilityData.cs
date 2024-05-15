@@ -44,6 +44,12 @@ namespace LNE.Combat.Abilities
       }
     }
 
+    protected override void Awake()
+    {
+      base.Awake();
+      _stats.BuildDictionary();
+    }
+
     protected override void OnValidate()
     {
       base.OnValidate();

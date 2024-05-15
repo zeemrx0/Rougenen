@@ -19,7 +19,7 @@ namespace LNE.Core
     public void StartChallenge()
     {
       _gameSceneManager.LoadScene(
-        SceneName.ChallengeScene,
+        SceneName.Challenge,
         new LoadSceneModel(),
         true
       );

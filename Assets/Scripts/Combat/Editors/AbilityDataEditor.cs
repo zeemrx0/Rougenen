@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using LNE.Utilities.Constants;
@@ -9,11 +10,6 @@ namespace LNE.Combat.Editors
   public class AbilityDataEditor : Editor
   {
     private AbilityData _object;
-
-    private void Awake()
-    {
-      _object = (AbilityData)target;
-    }
 
     public override void OnInspectorGUI()
     {
@@ -42,3 +38,4 @@ namespace LNE.Combat.Editors
     }
   }
 }
+#endif

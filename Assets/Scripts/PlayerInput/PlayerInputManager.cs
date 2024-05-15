@@ -15,5 +15,15 @@ namespace LNE.Inputs
     {
       get { return _moveJoystick.Direction; }
     }
+
+    public void Enable()
+    {
+      _moveJoystick.gameObject.SetActive(true);
+    }
+
+    public void Disable()
+    {
+      _moveJoystick.gameObject.SetActive(false);
+    }
   }
 }

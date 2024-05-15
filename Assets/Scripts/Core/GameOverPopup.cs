@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using LNE.Utilities.Constants;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace LNE.Core
 {
@@ -11,6 +13,16 @@ namespace LNE.Core
 
     [SerializeField]
     private TextMeshProUGUI _message;
+
+    #region Injected
+    private GameSceneManager _gameSceneManager;
+    #endregion
+
+    [Inject]
+    public void Construct(GameSceneManager gameSceneManager)
+    {
+      _gameSceneManager = gameSceneManager;
+    }
 
     public void Show(string title, string message)
     {
@@ -26,6 +38,11 @@ namespace LNE.Core
     public void Hide()
     {
       gameObject.SetActive(false);
+    }
+
+    public void BackToMainMenu()
+    {
+      _gameSceneManager.LoadScene(SceneName.MainMenu, null, false);
     }
   }
 }

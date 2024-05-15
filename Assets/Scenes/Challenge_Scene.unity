@@ -147,18 +147,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3186076060591943712, guid: 07f6be20bedfe41c8855f323c1a6f970, type: 3}
-      propertyPath: _abilityDataList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3186076060591943712, guid: 07f6be20bedfe41c8855f323c1a6f970, type: 3}
-      propertyPath: _abilityDataList.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1d2e560e961994658850683cfe1a1103, type: 2}
-    - target: {fileID: 3186076060591943712, guid: 07f6be20bedfe41c8855f323c1a6f970, type: 3}
-      propertyPath: _abilityDataList.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3ac17deed41314eb0aa661f9f41c2e49, type: 2}
     - target: {fileID: 4604898102668622948, guid: 07f6be20bedfe41c8855f323c1a6f970, type: 3}
       propertyPath: m_Name
       value: Player_Character
@@ -11792,6 +11780,34 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -22.989998
       objectReference: {fileID: 0}
+    - target: {fileID: 2044677168742419586, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044677168742419586, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044677168742419586, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9133514233284919423}
+    - target: {fileID: 2044677168742419586, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044677168742419586, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044677168742419586, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LNE.Core.GameOverPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044677168742419586, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2246799675345220179, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11964,6 +11980,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 9007359578457740939, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -12068,6 +12088,10 @@ PrefabInstance:
       propertyPath: _enemyWaveRewardPopup
       value: 
       objectReference: {fileID: 1725849764}
+    - target: {fileID: 3999334971595832535, guid: 668e72283afff482eac91fb4156832e1, type: 3}
+      propertyPath: _playerCharacterHealthPresenter
+      value: 
+      objectReference: {fileID: 134000278}
     - target: {fileID: 4654575924025060308, guid: 668e72283afff482eac91fb4156832e1, type: 3}
       propertyPath: settings.showAdvancedSettings
       value: 0
