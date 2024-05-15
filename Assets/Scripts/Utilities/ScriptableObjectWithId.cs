@@ -2,9 +2,7 @@ using UnityEngine;
 
 namespace LNE.Utilities
 {
-  public abstract class ScriptableObjectWithId
-    : ScriptableObject,
-      IContainsId
+  public abstract class ScriptableObjectWithId : ScriptableObject, IContainsId
   {
     public string Id { get; set; }
 

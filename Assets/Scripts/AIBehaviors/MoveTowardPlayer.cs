@@ -18,7 +18,7 @@ namespace LNE.AI.Behaviors
     {
       _playerCharacter = GameObject
         .FindGameObjectWithTag(TagName.Player)
-        .GetComponent<Character>();
+        ?.GetComponent<Character>();
 
       _movementPresenter = GetComponent<AICharacterMovementPresenter>();
     }

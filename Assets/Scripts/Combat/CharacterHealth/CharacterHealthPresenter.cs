@@ -30,23 +30,14 @@ namespace LNE.Combat
       if (_model.CurrentHealth <= 0)
       {
         _model.CurrentHealth = 0;
-        StartDie();
+        Die();
       }
       _view.SetHealthSliderValue(_model.CurrentHealth / _model.MaxHealth);
     }
 
-    private void StartDie()
+    protected virtual void Die()
     {
-      // if (TryGetComponent(out SpawnLootOnDeath spawnLootOnDeath))
-      // {
-      //   spawnLootOnDeath.SpawnLoot();
-      // }
-
-      // _view.ShowOnDieVFX();
-      // float time = _view.PlayOnDieSound();
-
       OnDie?.Invoke();
-
       StartCoroutine(DieCoroutine(1f));
     }
 

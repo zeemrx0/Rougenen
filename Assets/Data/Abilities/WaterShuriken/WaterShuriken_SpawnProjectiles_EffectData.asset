@@ -19,7 +19,7 @@ MonoBehaviour:
     - <Name>k__BackingField: Is Projectile Orbit
       <Value>k__BackingField: 1
     - <Name>k__BackingField: Projectile Speed
-      <Value>k__BackingField: 5
+      <Value>k__BackingField: 6
     - <Name>k__BackingField: Projectile Alive Range
       <Value>k__BackingField: 1e+9
     - <Name>k__BackingField: Projectile Quantity
