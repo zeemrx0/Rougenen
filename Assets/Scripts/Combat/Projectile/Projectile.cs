@@ -58,7 +58,7 @@ namespace LNE.Combat
 
         default:
           SpawnVFX(OnHitVFX);
-          _soundPlayer.Play(OnHitSound);
+          _soundPlayer.PlayOneShot(OnHitSound);
 
           other.TryGetComponent<CharacterHealthPresenter>(
             out CharacterHealthPresenter health
