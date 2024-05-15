@@ -36,7 +36,7 @@ namespace LNE.Challenges
 
       if (_model.TimeUntilEndWave <= 0f)
       {
-        EndLevel();
+        EndWave();
       }
 
       if (_model.TimeUntilNextSubWave <= 0f)
@@ -46,9 +46,9 @@ namespace LNE.Challenges
       }
     }
 
-    private void EndLevel()
+    private void EndWave()
     {
-      Debug.Log("Level ended");
+      Debug.Log("End wave");
     }
 
     public void SpawnNextWave()

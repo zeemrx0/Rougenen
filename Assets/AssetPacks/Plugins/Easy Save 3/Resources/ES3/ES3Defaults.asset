@@ -32,11 +32,13 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - AYellowpaper.SerializedCollections
+    - Challenges
     - Character
     - CharacterMovements
     - Cinemachine
     - Combat
     - Core
+    - ES3
     - JoystickPack
     - PlayerInput
     - UltimateEditorEnhancer
