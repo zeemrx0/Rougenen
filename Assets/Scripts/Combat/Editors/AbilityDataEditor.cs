@@ -3,7 +3,7 @@ using UnityEditor;
 using LNE.Utilities.Constants;
 using LNE.Combat.Abilities;
 
-namespace LNE.Utilities
+namespace LNE.Combat.Editors
 {
   [CustomEditor(typeof(AbilityData), true)]
   public class AbilityDataEditor : Editor

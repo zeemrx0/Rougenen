@@ -1,4 +1,4 @@
 namespace LNE.Utilities.Constants
 {
-  class GameObjectName { }
+  public class GameObjectName { }
 }

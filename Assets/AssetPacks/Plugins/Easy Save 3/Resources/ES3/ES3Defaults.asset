@@ -32,8 +32,15 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - AYellowpaper.SerializedCollections
+    - Character
+    - CharacterMovements
     - Cinemachine
+    - Combat
+    - Core
+    - JoystickPack
+    - PlayerInput
     - UltimateEditorEnhancer
+    - Utilities
     - Zenject
     - Zenject-IntegrationTests
     - Zenject-IntegrationTests-Editor

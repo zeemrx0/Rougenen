@@ -1,0 +1,18 @@
+{
+    "name": "CharacterMovements",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7f0cb95e4b9bc46ab96a293b7172cce1",
+        "GUID:7dd417be1930843b2a897983d079a44a",
+        "GUID:8a556b6e51bed402596b51ee731abf56"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
