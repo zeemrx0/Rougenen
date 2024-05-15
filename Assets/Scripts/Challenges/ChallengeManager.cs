@@ -1,20 +1,20 @@
 using LNE.Utilities.Constants;
 using UnityEngine;
 
-namespace LNE.GameChallenge
+namespace LNE.Challenges
 {
-  public class GameChallengeManager : MonoBehaviour
+  public class ChallengeManager : MonoBehaviour
   {
     [SerializeField]
-    private GameChallengeData _data;
+    private ChallengeData _data;
 
-    private GameChallengeModel _model = new GameChallengeModel();
+    private ChallengeModel _model = new ChallengeModel();
 
-    public GameLevelData CurrentLevelData => _model.CurrentLevelData;
+    public EnemyWaveData CurrentEnemyWaveData => _model.CurrentEnemyWaveData;
 
     private void Awake()
     {
-      _model = new GameChallengeModel(_data);
+      _model = new ChallengeModel(_data);
       LoadFromFile();
     }
 
@@ -22,7 +22,7 @@ namespace LNE.GameChallenge
     {
       if (ES3.KeyExists(SavingKey.GameChallenge, SavingPath.GameChallenge))
       {
-        _model = ES3.Load<GameChallengeModel>(
+        _model = ES3.Load<ChallengeModel>(
           SavingKey.GameChallenge,
           SavingPath.GameChallenge
         );

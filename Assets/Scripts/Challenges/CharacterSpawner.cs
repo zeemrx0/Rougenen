@@ -3,7 +3,7 @@ using LNE.Characters;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace LNE.GameChallenge
+namespace LNE.Challenges
 {
   public class CharacterSpawner : MonoBehaviour
   {
