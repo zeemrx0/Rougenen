@@ -7,20 +7,22 @@ namespace LNE.Challenges
     public EnemyWaveData Data { get; set; }
     public List<EnemySubWaveUnit> Units { get; set; } =
       new List<EnemySubWaveUnit>();
-    public int CurrentSubWave { get; set; } = 0;
+    public int CurrentSubWave { get; set; } = -1;
     public float TimeUntilNextSubWave { get; set; } = 0f;
     public float TimeUntilEndWave { get; set; } = 0f;
 
     public EnemyWaveModel()
     {
       Units = new List<EnemySubWaveUnit>();
-      CurrentSubWave = 0;
+      CurrentSubWave = -1;
     }
 
     public EnemyWaveModel(EnemyWaveData gameLevelData)
     {
       Data = gameLevelData;
+      CurrentSubWave = -1;
       TimeUntilEndWave = gameLevelData.Duration;
+      TimeUntilNextSubWave = 0f;
       Units = new List<EnemySubWaveUnit>();
       for (int i = 0; i < gameLevelData.EnemySubWaveUnits.Count; i++)
       {

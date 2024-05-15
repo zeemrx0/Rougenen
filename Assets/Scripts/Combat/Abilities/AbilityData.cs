@@ -72,7 +72,7 @@ namespace LNE.Combat.Abilities
 
       if (_targetingStrategy == null && _effectStrategy != null)
       {
-        _effectStrategy.StartEffect(
+        PerformAbility(
           characterAbilitiesPresenter,
           abilityModel,
           abilityModel.ProjectilePool
@@ -98,6 +98,15 @@ namespace LNE.Combat.Abilities
     }
 
     public void OnTargetAcquired(
+      CharacterAbilitiesPresenter characterAbilitiesPresenter,
+      AbilityModel abilityModel,
+      IObjectPool<Projectile> projectilePool
+    )
+    {
+      PerformAbility(characterAbilitiesPresenter, abilityModel, projectilePool);
+    }
+
+    private void PerformAbility(
       CharacterAbilitiesPresenter characterAbilitiesPresenter,
       AbilityModel abilityModel,
       IObjectPool<Projectile> projectilePool

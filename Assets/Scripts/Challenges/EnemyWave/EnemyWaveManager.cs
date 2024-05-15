@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using LNE.Combat.Abilities;
 using UnityEngine;
 using Zenject;
 
@@ -6,52 +8,39 @@ namespace LNE.Challenges
   [RequireComponent(typeof(CharacterSpawner))]
   public class EnemyWaveManager : MonoBehaviour
   {
-    #region Injected
-    private ChallengeManager _challengeManager;
-    #endregion
-
     private CharacterSpawner _spawner;
-    private EnemyWaveModel _model = new EnemyWaveModel();
-
-    [Inject]
-    public void Construct(ChallengeManager challengeManager)
-    {
-      _challengeManager = challengeManager;
-    }
+    private EnemyWaveModel _model;
 
     private void Awake()
     {
       _spawner = GetComponent<CharacterSpawner>();
     }
 
-    private void Start()
-    {
-      _model = new EnemyWaveModel(_challengeManager.CurrentEnemyWaveData);
-    }
+    private void Start() { }
 
     private void Update()
     {
-      _model.TimeUntilNextSubWave -= Time.deltaTime;
-      _model.TimeUntilEndWave -= Time.deltaTime;
-
-      if (_model.TimeUntilEndWave <= 0f)
+      if (_model == null)
       {
-        EndWave();
+        return;
       }
 
       if (_model.TimeUntilNextSubWave <= 0f)
       {
-        SpawnNextWave();
+        SpawnSubNextWave();
         _model.TimeUntilNextSubWave = _model.Data.TimeBetweenWaves;
       }
+
+      _model.TimeUntilNextSubWave -= Time.deltaTime;
+      _model.TimeUntilEndWave -= Time.deltaTime;
     }
 
-    private void EndWave()
+    public void StartWave(EnemyWaveData data)
     {
-      Debug.Log("End wave");
+      _model = new EnemyWaveModel(data);
     }
 
-    public void SpawnNextWave()
+    public void SpawnSubNextWave()
     {
       _model.CurrentSubWave++;
 

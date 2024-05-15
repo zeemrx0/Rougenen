@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 264826484054588526}
   - component: {fileID: 2969957522749323477}
   m_Layer: 0
-  m_Name: GameAdventureManager
+  m_Name: ChallengeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,6 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 0}
+  _enemyWaveRewardPopup: {fileID: 0}
+  _waveRewards: []
 --- !u!114 &1355821505119217300
 MonoBehaviour:
   m_ObjectHideFlags: 0
