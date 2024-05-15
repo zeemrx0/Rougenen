@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - LoadSceneBackground
+  - EnemiesContainer
   layers:
   - Default
   - TransparentFX

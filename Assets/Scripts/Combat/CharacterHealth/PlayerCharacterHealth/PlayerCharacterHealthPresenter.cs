@@ -1,9 +1,14 @@
+using LNE.Core;
+using LNE.Utilities.Constants;
 using UnityEngine;
 
 namespace LNE.Combat
 {
   public class PlayerCharacterHealthPresenter : CharacterHealthPresenter
   {
+    [SerializeField]
+    private GameOverPopup _gameOverPopup;
+
     protected override void Awake()
     {
       base.Awake();
@@ -13,8 +18,7 @@ namespace LNE.Combat
     protected override void Die()
     {
       base.Die();
-
-      ((PlayerCharacterHealthView)_view).SetGameOverCanvasActive(true);
+      _gameOverPopup.Show(GameString.GameOver, GameString.TryBetterNextTime);
     }
   }
 }

@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4627384318596588589, guid: 07f6be20bedfe41c8855f323c1a6f970, type: 3}
+      propertyPath: _gameOverPopup
+      value: 
+      objectReference: {fileID: 9133514233284919423}
     - target: {fileID: 1050897528714809547, guid: 07f6be20bedfe41c8855f323c1a6f970, type: 3}
       propertyPath: _gameOverCanvas
       value: 
@@ -922,6 +926,37 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 3459486739932680121, guid: 07f6be20bedfe41c8855f323c1a6f970, type: 3}
   m_PrefabInstance: {fileID: 134000250}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &254543184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254543185}
+  m_Layer: 0
+  m_Name: EnemiesContainer
+  m_TagString: EnemiesContainer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &254543185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254543184}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.933801, y: -1.677201, z: -0.095621884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &349323786
 GameObject:
   m_ObjectHideFlags: 3
@@ -12026,29 +12061,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a58eba6260cee4cb1a0e9216e323335e, type: 2}
     - target: {fileID: 3999334971595832535, guid: 668e72283afff482eac91fb4156832e1, type: 3}
-      propertyPath: _data
+      propertyPath: _gameOverPopup
       value: 
-      objectReference: {fileID: 11400000, guid: 553260606639646aebe5f9a0425416df, type: 2}
+      objectReference: {fileID: 9133514233284919423}
     - target: {fileID: 3999334971595832535, guid: 668e72283afff482eac91fb4156832e1, type: 3}
       propertyPath: _enemyWaveRewardPopup
       value: 
       objectReference: {fileID: 1725849764}
-    - target: {fileID: 3999334971595832535, guid: 668e72283afff482eac91fb4156832e1, type: 3}
-      propertyPath: _waveRewards.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3999334971595832535, guid: 668e72283afff482eac91fb4156832e1, type: 3}
-      propertyPath: _waveRewards.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: a58eba6260cee4cb1a0e9216e323335e, type: 2}
-    - target: {fileID: 3999334971595832535, guid: 668e72283afff482eac91fb4156832e1, type: 3}
-      propertyPath: _waveRewards.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7d27f43b3dacd416eb4f45f8cfa3a474, type: 2}
-    - target: {fileID: 3999334971595832535, guid: 668e72283afff482eac91fb4156832e1, type: 3}
-      propertyPath: _waveRewards.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: e54d08d33845d4faca91105771968078, type: 2}
     - target: {fileID: 4654575924025060308, guid: 668e72283afff482eac91fb4156832e1, type: 3}
       propertyPath: settings.showAdvancedSettings
       value: 0
@@ -12466,6 +12485,17 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 5323232800247820016, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
   m_PrefabInstance: {fileID: 6188848471306272258}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9133514233284919423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7882264089704285263, guid: 8ad673c523d8644b88c7b3f8c0112307, type: 3}
+  m_PrefabInstance: {fileID: 6188848471306272258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962445b7a73494626bfddaf8fd8395a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -12477,3 +12507,4 @@ SceneRoots:
   - {fileID: 6188848471306272258}
   - {fileID: 134000250}
   - {fileID: 2068544813}
+  - {fileID: 254543185}

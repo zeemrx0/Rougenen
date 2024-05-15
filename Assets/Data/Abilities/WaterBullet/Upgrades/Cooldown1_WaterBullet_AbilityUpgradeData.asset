@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cooldown1_WaterBullet_AbilityUpgradeData
   m_EditorClassIdentifier: 
   _abilityData: {fileID: 11400000, guid: 3ac17deed41314eb0aa661f9f41c2e49, type: 2}
-  <Name>k__BackingField: Bullet -1.5s Cooldown
+  <Name>k__BackingField: Bullet -0.5s Cooldown
   <Stats>k__BackingField:
     _list:
     - <Name>k__BackingField: Cooldown Time
-      <Value>k__BackingField: -1.5
+      <Value>k__BackingField: -0.5

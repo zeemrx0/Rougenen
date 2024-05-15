@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Damge1_WaterBullet_AbilityUpgradeData
   m_EditorClassIdentifier: 
   _abilityData: {fileID: 11400000, guid: 3ac17deed41314eb0aa661f9f41c2e49, type: 2}
-  <Name>k__BackingField: Bullet +15 Damage
+  <Name>k__BackingField: Bullet +5 Damage
   <Stats>k__BackingField:
     _list:
     - <Name>k__BackingField: Damage
-      <Value>k__BackingField: 15
+      <Value>k__BackingField: 5

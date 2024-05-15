@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using LNE.Characters;
+using LNE.Utilities.Constants;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,9 +12,13 @@ namespace LNE.Challenges
     private Tilemap _tilemap;
 
     private List<Vector3> _canSpawnPositions = new List<Vector3>();
+    private Transform _charactersContainer;
 
     private void Awake()
     {
+      _charactersContainer = GameObject
+        .Find(TagName.EnemiesContainer)
+        .transform;
       InitCanSpawnPositions();
     }
 
@@ -42,7 +47,12 @@ namespace LNE.Challenges
         Random.Range(0, _canSpawnPositions.Count)
       ];
 
-      Instantiate(character, position, Quaternion.identity);
+      Instantiate(
+        character,
+        position,
+        Quaternion.identity,
+        _charactersContainer
+      );
     }
   }
 }

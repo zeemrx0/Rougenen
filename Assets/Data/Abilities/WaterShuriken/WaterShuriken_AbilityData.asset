@@ -24,7 +24,7 @@ MonoBehaviour:
     - <Name>k__BackingField: Ignore Layers
       <Value>k__BackingField: 640
     - <Name>k__BackingField: Damage
-      <Value>k__BackingField: 10
+      <Value>k__BackingField: 7
     - <Name>k__BackingField: Range
       <Value>k__BackingField: 2.5
     - <Name>k__BackingField: Cooldown Time

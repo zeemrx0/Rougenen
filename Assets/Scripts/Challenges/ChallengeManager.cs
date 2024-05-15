@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using LNE.Combat.Abilities;
 using LNE.Core;
+using LNE.Utilities.Constants;
 using UnityEngine;
 using Zenject;
 
@@ -17,12 +18,16 @@ namespace LNE.Challenges
     [SerializeField]
     private List<AbilityUpgradeData> _waveRewards;
 
+    [SerializeField]
+    private GameOverPopup _gameOverPopup;
+
     #region Injected
     private GameSceneManager _gameSceneManager;
     #endregion
 
     private ChallengeModel _model = new ChallengeModel();
     private EnemyWaveManager _enemyWaveManager;
+    private Transform _enemiesContainer;
 
     public EnemyWaveData CurrentEnemyWaveData => _model.CurrentEnemyWaveData;
 
@@ -36,6 +41,9 @@ namespace LNE.Challenges
     {
       _model = new ChallengeModel(_data);
       _enemyWaveManager = GetComponent<EnemyWaveManager>();
+      _enemiesContainer = GameObject
+        .Find(TagName.EnemiesContainer)
+        .transform;
     }
 
     private void Update()
@@ -86,7 +94,12 @@ namespace LNE.Challenges
 
     private void EndChallenge()
     {
-      Debug.Log("Challenge Ended");
+      foreach (Transform child in _enemiesContainer)
+      {
+        Destroy(child.gameObject);
+      }
+
+      _gameOverPopup.Show(GameString.YouWin, GameString.YourAreAMonsterHunter);
     }
 
     public void TryAgain()
