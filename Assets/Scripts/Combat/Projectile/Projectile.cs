@@ -21,7 +21,7 @@ namespace LNE.Combat
     private Rigidbody2D _rigidbody;
     private SoundPlayer _soundPlayer;
     private bool _isDestroyedOnCollision = false;
-    private Vector2 _lastOwnerPosition;
+    private Vector3 _lastOwnerPosition;
     private float _lastAngle = 0f;
 
     private void Awake()
@@ -104,7 +104,7 @@ namespace LNE.Combat
           (
             Quaternion.Euler(0, 0, -_lastAngle)
             * (Vector2.up * Stats.Get(StatName.Range))
-          ) + Owner.transform.position;
+          ) + _lastOwnerPosition;
 
         transform.position = targetPosition;
 
@@ -114,7 +114,8 @@ namespace LNE.Combat
           * 360
           * Time.deltaTime;
 
-        transform.up = (_lastOwnerPosition - (Vector2)transform.position) * -1;
+        transform.up =
+          ((Vector2)_lastOwnerPosition - (Vector2)transform.position) * -1;
       }
     }
 

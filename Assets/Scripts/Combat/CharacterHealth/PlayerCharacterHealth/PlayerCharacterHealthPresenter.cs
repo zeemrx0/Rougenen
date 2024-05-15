@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace LNE.Combat
 {
   public class PlayerCharacterHealthPresenter : CharacterHealthPresenter
@@ -6,6 +8,13 @@ namespace LNE.Combat
     {
       base.Awake();
       _view = GetComponentInChildren<CharacterHealthView>();
+    }
+
+    protected override void Die()
+    {
+      base.Die();
+
+      ((PlayerCharacterHealthView)_view).SetGameOverCanvasActive(true);
     }
   }
 }

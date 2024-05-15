@@ -54,6 +54,11 @@ namespace LNE.Combat.Abilities
       }
       else
       {
+        if (abilityModel.TargetingDirection == Vector2.zero)
+        {
+          abilityModel.TargetingDirection = Vector2.right;
+        }
+        
         SpawnStraightProjectiles(characterAbilitiesPresenter, abilityModel);
       }
     }
